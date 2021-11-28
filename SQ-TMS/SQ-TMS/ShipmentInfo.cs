@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    //===================================================================================================================
+    /// \class Shipments
+    ///
+    /// \brief The purpose of this class is to realistically model the attributes of a circle
+    /// \details <b>Details</b>
+    ///
+    /// Circle class which contains private attribute radius which holds the radius of the circle.
+    /// This class contains a default consructor and another constructor which takes a radius as a
+    /// parameter. This class contains accessors and mutators for the private attributes, along with
+    /// virtual function which do calculations for the circles area, perimeter, and diameter.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     class Shipments
     {
         public int ShipmentsInfoID { get; set; }

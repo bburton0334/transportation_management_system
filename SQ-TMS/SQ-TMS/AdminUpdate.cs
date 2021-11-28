@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    ///==================================================================================================================
+    /// \class AdminUpdate
+    ///
+    /// \brief The purpose of this class is to realistically model the attributes of a circle
+    /// \details <b>Details</b>
+    ///
+    /// Circle class which contains private attribute radius which holds the radius of the circle.
+    /// This class contains a default consructor and another constructor which takes a radius as a
+    /// parameter. This class contains accessors and mutators for the private attributes, along with
+    /// virtual function which do calculations for the circles area, perimeter, and diameter.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    ///==================================================================================================================
     class AdminUpdate
     {
         public int Au_updateID { get; set; }
@@ -23,17 +33,24 @@ namespace SQ_TMS
         public string Au_routeTable { get; set; }
         public string Au_backup { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="newAu_updateID"></param>
-        /// <param name="newAu_logfiles"></param>
-        /// <param name="newAu_IPAddress"></param>
-        /// <param name="newAu_ports"></param>
-        /// <param name="newAu_rates"></param>
-        /// <param name="newAu_carrierData"></param>
-        /// <param name="newAu_routeTable"></param>
-        /// <param name="newAu_backup"></param>
+        ///==============================================================================================================
+        /// \brief To instantiate a new AdminUpdate object - given a set of attribute values
+        /// \details <b>Details</b>
+        ///
+        /// Constructor that creates a new AdminUpdate object given the proper parameters.
+        /// \param newAu_updateID - <b>int</b> - representation of the radius of the circle
+        /// \param newAu_logfiles - <b>string</b> - representation of the radius of the circle
+        /// \param newAu_IPAddress - <b>string</b> - representation of the radius of the circle
+        /// \param newAu_ports - <b>int</b> - representation of the radius of the circle
+        /// \param newAu_rates - <b>string</b> - representation of the radius of the circle
+        /// \param newAu_carrierData - <b>string</b> - representation of the radius of the circle
+        /// \param newAu_routeTable - <b>string</b> - representation of the radius of the circle
+        /// \param newAu_backup - <b>string</b> - representation of the radius of the circle
+        ///
+        /// \return As this is a <i>constructor</i> for the AdminUpdate class, nothing is returned
+        ///
+        /// \see ~AdminUpdate()
+        ///==============================================================================================================
         public AdminUpdate(int newAu_updateID, string newAu_logfiles, string newAu_IPAddress, int newAu_ports, string newAu_rates, string newAu_carrierData, string newAu_routeTable, string newAu_backup)
         {
             // SET ALL OF THE VALUES

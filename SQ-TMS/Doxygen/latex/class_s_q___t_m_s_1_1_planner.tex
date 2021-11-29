@@ -1,10 +1,17 @@
 \hypertarget{class_s_q___t_m_s_1_1_planner}{}\doxysection{SQ\+\_\+\+TMS.\+Planner Class Reference}
 \label{class_s_q___t_m_s_1_1_planner}\index{SQ\_TMS.Planner@{SQ\_TMS.Planner}}
+
+
+The purpose of this class is to create a planner Object.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner_a778f6cf5e212ddb91575fb13634713bc}{Planner}} (int new\+Planner\+Id, string new\+Planner\+First\+Name, string new\+Planner\+Last\+Name, string new\+Planner\+Summary\+Report)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em To instantiate a new \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} object -\/ given a set of attribute values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner_aa0699fac068be51b19073da8d3639dff}{Update\+Planner\+ID}} (\mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} existing\+Planner, int new\+Planner\+ID)
+\begin{DoxyCompactList}\small\item\em update\+Planner\+ID function-\/ given a set of attribute values \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,6 +29,18 @@ string {\bfseries Planner\+\_\+summary\+Report}\hspace{0.3cm}{\ttfamily  \mbox{[
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+The purpose of this class is to create a planner Object. 
+
+{\bfseries{Details}}
+
+\mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} which contains public attribute Planner\+\_\+\+ID which holds \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} ID . This class contains a default consructor, along with a Update\+Planner\+ID function This class contains accessors and mutators for the private attributes,
+
+\begin{DoxyAuthor}{Author}
+BNSM {\itshape Transportation Management System Experts} 
+\end{DoxyAuthor}
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_s_q___t_m_s_1_1_planner_a778f6cf5e212ddb91575fb13634713bc}\label{class_s_q___t_m_s_1_1_planner_a778f6cf5e212ddb91575fb13634713bc}} 
 \index{SQ\_TMS.Planner@{SQ\_TMS.Planner}!Planner@{Planner}}
@@ -31,19 +50,55 @@ string {\bfseries Planner\+\_\+summary\+Report}\hspace{0.3cm}{\ttfamily  \mbox{[
 
 
 
+To instantiate a new \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} object -\/ given a set of attribute values. 
 
+{\bfseries{Details}}
 
-
+Constructor that creates a new \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} object given the proper parameters. 
 \begin{DoxyParams}{Parameters}
-{\em new\+Planner\+Id} & \\
+{\em new\+Planner\+ID} & -\/ {\bfseries{int}} -\/ representation of the radius of the circle \\
 \hline
-{\em new\+Planner\+First\+Name} & \\
+{\em new\+Planner\+First\+Name} & -\/ {\bfseries{string}} -\/ representation of the radius of the circle \\
 \hline
-{\em new\+Planner\+Last\+Name} & \\
+{\em new\+Planner\+Last\+Name} & -\/ {\bfseries{string}} -\/ representation of the radius of the circle \\
 \hline
-{\em new\+Planner\+Summary\+Report} & \\
+{\em new\+Planner\+Summary\+Report} & -\/ {\bfseries{string}} -\/ representation of the radius of the circle\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As this is a {\itshape constructor} for the \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} class, nothing is returned
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+$\sim$\+Planner() 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q___t_m_s_1_1_planner_aa0699fac068be51b19073da8d3639dff}\label{class_s_q___t_m_s_1_1_planner_aa0699fac068be51b19073da8d3639dff}} 
+\index{SQ\_TMS.Planner@{SQ\_TMS.Planner}!UpdatePlannerID@{UpdatePlannerID}}
+\index{UpdatePlannerID@{UpdatePlannerID}!SQ\_TMS.Planner@{SQ\_TMS.Planner}}
+\doxysubsubsection{\texorpdfstring{UpdatePlannerID()}{UpdatePlannerID()}}
+{\footnotesize\ttfamily bool SQ\+\_\+\+TMS.\+Planner.\+Update\+Planner\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}}}]{existing\+Planner,  }\item[{int}]{new\+Planner\+ID }\end{DoxyParamCaption})}
+
+
+
+update\+Planner\+ID function-\/ given a set of attribute values 
+
+{\bfseries{Details}}
+
+Method that takes existing\+Planner and New\+Planner IDs to validate and check if a previous version of them exist. 
+\begin{DoxyParams}{Parameters}
+{\em existing\+Planner} & -\/ {\bfseries{\mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}}}} -\/ representation of the new planner\textquotesingle{}s ID \\
+\hline
+{\em new\+Planner\+ID} & -\/ {\bfseries{new\+Planner\+ID}} -\/ representation new planner\textquotesingle{}s First Name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As this is a {\itshape method} for the \mbox{\hyperlink{class_s_q___t_m_s_1_1_planner}{Planner}} class, bool is returned
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+$\sim$\+Planner() 
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

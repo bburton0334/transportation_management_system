@@ -2,14 +2,18 @@
 \label{class_s_q___t_m_s_1_1_admin}\index{SQ\_TMS.Admin@{SQ\_TMS.Admin}}
 
 
- 
+The purpose of this class is to create a \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} Object.  
 
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin_a6bcc9108b6285864a59647a7e3dce19b}{Admin}} (int new\+Admin\+ID, string new\+Admin\+First\+Name, string new\+Admin\+Last\+Name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em To instantiate a new \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} object -\/ given a set of attribute values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin_a9ccea8cd4f931549ac2996f06e11e8cc}{Update\+Admin\+ID}} (\mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} existing\+Admin, int new\+Admin\+ID)
+\begin{DoxyCompactList}\small\item\em update\+Admin\+ID function-\/ given a set of attribute values \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin_ac04d8637426003f743120ec9ec5323a8}{Update\+First\+Name}} (\mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} existing, string firstname)
+\begin{DoxyCompactList}\small\item\em update\+First\+Name function-\/ given a set of attribute values \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,8 +29,13 @@ string {\bfseries Admin\+Last\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\m
 
 
 \doxysubsection{Detailed Description}
+The purpose of this class is to create a \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} Object. 
 
+==================================================================================================================
 
+{\bfseries{Details}}
+
+\mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} which contains public attribute Admin\+\_\+\+ID which holds \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} ID . This class contains a default consructor, along with a Update\+Admin\+ID and Update\+First\+Name function This class contains accessors and mutators for the private attributes,\hypertarget{class_s_q___t_m_s_1_1_admin_autotoc_md0}{}\doxysubsection{\textbackslash{}author BNSM $<$i$>$\+Transportation Management System Experts$<$/i$>$}\label{class_s_q___t_m_s_1_1_admin_autotoc_md0}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -38,17 +47,80 @@ string {\bfseries Admin\+Last\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\m
 
 
 
+To instantiate a new \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} object -\/ given a set of attribute values. 
 
+==============================================================================================================
 
+{\bfseries{Details}}
 
+Constructor that creates a new \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin_update}{Admin\+Update}} object given the proper parameters. 
 \begin{DoxyParams}{Parameters}
-{\em new\+Admin\+ID} & \\
+{\em dmin\+ID} & -\/ {\bfseries{int}} -\/ representation of the Admin\+ID \\
 \hline
-{\em new\+Admin\+First\+Name} & \\
+{\em new\+Admin\+First\+Name} & -\/ {\bfseries{string}} -\/ representation of new\+Admin\+Fist\+Name \\
 \hline
-{\em new\+Admin\+Last\+Name} & \\
+{\em new\+Admin\+Last\+Name} & -\/ {\bfseries{string}} -\/ representation of new\+Admin\+Last\+Name\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As this is a {\itshape constructor} for the \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} class, nothing is returned
+\end{DoxyReturn}
+\hypertarget{class_s_q___t_m_s_1_1_admin_autotoc_md1}{}\doxysubsection{\textbackslash{}see $\sim$\+Admin()}\label{class_s_q___t_m_s_1_1_admin_autotoc_md1}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q___t_m_s_1_1_admin_a9ccea8cd4f931549ac2996f06e11e8cc}\label{class_s_q___t_m_s_1_1_admin_a9ccea8cd4f931549ac2996f06e11e8cc}} 
+\index{SQ\_TMS.Admin@{SQ\_TMS.Admin}!UpdateAdminID@{UpdateAdminID}}
+\index{UpdateAdminID@{UpdateAdminID}!SQ\_TMS.Admin@{SQ\_TMS.Admin}}
+\doxysubsubsection{\texorpdfstring{UpdateAdminID()}{UpdateAdminID()}}
+{\footnotesize\ttfamily bool SQ\+\_\+\+TMS.\+Admin.\+Update\+Admin\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}}}]{existing\+Admin,  }\item[{int}]{new\+Admin\+ID }\end{DoxyParamCaption})}
+
+
+
+update\+Admin\+ID function-\/ given a set of attribute values 
+
+{\bfseries{Details}}
+
+Method that takes existing and new\+\_\+\+ID to validate and check if a previous version of them exist. 
+\begin{DoxyParams}{Parameters}
+{\em existing\+Admin} & -\/ {\bfseries{existing\+Admin}} -\/ representation of existing\+Admin \\
+\hline
+{\em new\+Admin\+ID} & -\/ {\bfseries{new\+ID}} -\/ representation new admin ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As this is a {\itshape method} for the \mbox{\hyperlink{class_s_q___t_m_s_1_1_buyer}{Buyer}} class, bool is returned
+
+As this is a {\itshape function} for the Update\+Admin\+ID class, bool is returned
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+$\sim$\+Admin() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_s_q___t_m_s_1_1_admin_ac04d8637426003f743120ec9ec5323a8}\label{class_s_q___t_m_s_1_1_admin_ac04d8637426003f743120ec9ec5323a8}} 
+\index{SQ\_TMS.Admin@{SQ\_TMS.Admin}!UpdateFirstName@{UpdateFirstName}}
+\index{UpdateFirstName@{UpdateFirstName}!SQ\_TMS.Admin@{SQ\_TMS.Admin}}
+\doxysubsubsection{\texorpdfstring{UpdateFirstName()}{UpdateFirstName()}}
+{\footnotesize\ttfamily bool SQ\+\_\+\+TMS.\+Admin.\+Update\+First\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}}}]{existing,  }\item[{string}]{firstname }\end{DoxyParamCaption})}
+
+
+
+update\+First\+Name function-\/ given a set of attribute values 
+
+{\bfseries{Details}}
+
+Method that takes existing and first\+Name to validate and check if a previous version of them exist. 
+\begin{DoxyParams}{Parameters}
+{\em existing} & -\/ {\bfseries{existing}} -\/ representation of existing \\
+\hline
+{\em first\+Name} & -\/ {\bfseries{first\+Name}} -\/ representation new \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}}\textquotesingle{}s First Name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As this is a {\itshape method} for the \mbox{\hyperlink{class_s_q___t_m_s_1_1_admin}{Admin}} class, bool is returned
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+$\sim$\+Admin() 
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

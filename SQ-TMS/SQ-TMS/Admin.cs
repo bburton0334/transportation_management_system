@@ -12,7 +12,7 @@ namespace SQ_TMS
     /// \brief The purpose of this class is to create a Admin Object
     /// \details <b>Details</b>
     ///
-    /// Admin which contains public attribute Admin_ID which holds Admin ID .
+    /// Admin which contains public attribute Admin_ID which holds Admin ID.
     /// This class contains a default consructor, along with a UpdateAdminID and UpdateFirstName function 
     /// This class contains accessors and mutators for the private attributes, 
     ///

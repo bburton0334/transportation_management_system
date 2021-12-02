@@ -13,5 +13,6 @@ namespace SQ_TMS
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

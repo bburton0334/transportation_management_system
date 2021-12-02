@@ -5,8 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SQ_TMS"
         mc:Ignorable="d"
-        Title="TMS: Transportation Managment System" Height="450" Width="800">
-    <Grid>
-        
+        ResizeMode="NoResize"
+        Title="TMS: Transportation Managment System" Height="450" Width="800" Icon="icon1.png">
+    <Grid Background="#FF1B1B1B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="589*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Left" Height="380" Margin="242.2,0,-0.4,0" VerticalAlignment="Top" Width="347" Grid.RowSpan="2" Grid.Column="1" Fill="#FF0E0E0E"/>
+        <Rectangle HorizontalAlignment="Left" Height="155" Margin="284.2,25,0,0" VerticalAlignment="Top" Width="267" Fill="#FF1D1D1D" Grid.Column="1"/>
+
+        <Image HorizontalAlignment="Left" Height="100" Margin="45,20,0,0" VerticalAlignment="Top" Width="355" Source="center-logo.png" Grid.ColumnSpan="2">
+            <Image.Effect>
+                <BlurEffect Radius="1"/>
+            </Image.Effect>
+        </Image>
+        <Button Content="BUYER PORTAL" HorizontalAlignment="Left" Margin="290.2,216,0,0" VerticalAlignment="Top" Width="255" Height="29" FontSize="16" Foreground="Black" Background="#FFD4D4D4" Grid.Column="1" FontWeight="Bold">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF6DA3DD" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Content="PLANNER PORTAL" HorizontalAlignment="Left" Margin="290.2,269,0,0" VerticalAlignment="Top" Width="255" Height="30" FontSize="16" Foreground="Black" Background="#FFD4D4D4" Grid.Column="1" Grid.RowSpan="2" FontWeight="Bold">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF6DA3DD" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Content="ADMIN PORTAL" HorizontalAlignment="Left" Margin="290.2,49.8,0,0" VerticalAlignment="Top" Width="255" Height="30" FontSize="16" Foreground="Black" Background="#FF888888" Grid.Row="1" Grid.Column="1" FontWeight="Bold" Click="Button_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightBlue" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FFDD6D6D" TargetName="Border" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="0,104.8,-0.4,0" VerticalAlignment="Top" Width="794" Fill="#FF0E0E0E" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label HorizontalContentAlignment="Center" Content="Copyright © 2021-present TMS: Transportation Managment System by Omnicorp Corporation. All Rights Reserved." HorizontalAlignment="Left" Margin="40,108.8,0,0" VerticalAlignment="Top" Width="710" Foreground="#FF717171" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="230" Margin="45,125,0,0" VerticalAlignment="Top" Width="355" Fill="#FF2F2F2F" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="65,193,0,0" TextWrapping="Wrap" Text="Welcome to the TMS: Transportation Managment System portal, created by BNSM. This portal allows for access to various sub-portals depending on your role with the TMS: Transportation Management System. Click on the button corrosponding with your role to continue. If you wish to register for a role, click the button corrosponding with the role you wish to register for. Thank you for choosing TMS." VerticalAlignment="Top" Width="320" Height="117" Foreground="#FFE0E0E0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="INFORMATION" HorizontalAlignment="Left" Margin="65,145,0,0" VerticalAlignment="Top" Width="320" Height="33" FontSize="18" FontWeight="Bold" Background="#FF202020" Foreground="#FFE0E0E0" Grid.ColumnSpan="2"/>
+        <Label HorizontalContentAlignment="Left" x:Name="LiveTimeLabel" Content="%TIME%" HorizontalAlignment="Left" Margin="61,42.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="240" Foreground="#FF868686" Grid.ColumnSpan="2"/>
+        <Label HorizontalContentAlignment="Left" Content="ROLE INFORMATION" Grid.Column="1" HorizontalAlignment="Left" Margin="290.2,34,0,0" VerticalAlignment="Top" Width="254" Background="#FF2F2F2F" FontSize="18" FontWeight="Bold" Foreground="LightGray"/>
+        <Label Content="Buyer:" Grid.Column="1" HorizontalAlignment="Left" Margin="295.2,85,0,0" VerticalAlignment="Top" Foreground="LightGray" FontWeight="Bold">
+</Label>
+        <Label Content="Planner:" Grid.Column="1" HorizontalAlignment="Left" Margin="295.2,111,0,0" VerticalAlignment="Top" Foreground="LightGray" FontWeight="Bold"/>
+        <Label Content="Admin:" Grid.Column="1" HorizontalAlignment="Left" Margin="295.2,137,0,0" VerticalAlignment="Top" Foreground="LightGray" FontWeight="Bold" Height="26"/>
+        <Label Content="Aids Orders by Selecting Carriers" Grid.Column="1" HorizontalAlignment="Left" Margin="351.2,111,0,0" VerticalAlignment="Top" Foreground="LightGray"/>
+        <Label Content="Deals with Contracts and Orders" Grid.Column="1" HorizontalAlignment="Left" Margin="351.2,85,0,0" VerticalAlignment="Top" Foreground="LightGray" Background="{x:Null}"/>
+        <Label Content="Maintains TMS With IT Experience" Grid.Column="1" HorizontalAlignment="Left" Margin="351.2,137,0,0" VerticalAlignment="Top" Foreground="LightGray"/>
+
     </Grid>
 </Window>

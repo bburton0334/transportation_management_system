@@ -21,9 +21,12 @@ namespace SQ_TMS
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+
+            BtnBack.Visibility = Visibility.Hidden;
 
             DispatcherTimer LiveTime = new DispatcherTimer();
             LiveTime.Interval = TimeSpan.FromSeconds(1);
@@ -33,12 +36,45 @@ namespace SQ_TMS
 
         void timer_Tick(object sender, EventArgs e)
         {
-            LiveTimeLabel.Content = DateTime.Now.ToString("dddd, MMM, dd yyyy HH:mm:ss tt");
+            LiveTimeLabel.Content = "Thursday, Dec, 02 2021 10:35:22 PM";
+            //LiveTimeLabel.Content = DateTime.Now.ToString("dddd, MMM, dd yyyy HH:mm:ss tt");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            this.DragMove();
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnButtonPortal_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new BuyerPortal();
+            Main.Visibility = Visibility.Visible;
+            BtnBack.Visibility = Visibility.Visible;
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Visibility = Visibility.Hidden;
+            BtnBack.Visibility = Visibility.Hidden;
+        }
+
+        private void btnPlannerPortal_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new PlannerPortal();
+            Main.Visibility = Visibility.Visible;
+            BtnBack.Visibility = Visibility.Visible;
+        }
+
+        private void btnAdminPortal_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AdminPortal();
+            Main.Visibility = Visibility.Visible;
+            BtnBack.Visibility = Visibility.Visible;
         }
     }
 }

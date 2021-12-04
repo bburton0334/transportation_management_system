@@ -1,0 +1,32 @@
+﻿<Page x:Class="SQ_TMS.Buyer_ContractMarketplace"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SQ_TMS"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Buyer_ContractMarketplace">
+
+    <Grid Background="#FF141414" >
+        <Button Click="btnReviewCustomers_Click" x:Name="btnReviewCustomers" HorizontalContentAlignment="LEFT" Content="REVIEW EXISTING CUSTOMERS" HorizontalAlignment="Left" Margin="55,17,0,0" VerticalAlignment="Top" Width="165" FontWeight="Bold" FontStyle="Italic" FontSize="11" Height="23" Background="{x:Null}" Foreground="#FFA2A2A2" BorderBrush="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="40,38,0,0" VerticalAlignment="Top" Width="240"/>
+        <Button x:Name="btnAcceptNewCustomers" Click="btnAcceptNewCustomers_Click" HorizontalContentAlignment="LEFT" Content="ACCEPT NEW CUSTOMERS" HorizontalAlignment="Left" Margin="295,17,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" FontStyle="Italic" FontSize="11" Height="23" Background="{x:Null}" Foreground="#FFA2A2A2" BorderBrush="{x:Null}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="280,38,0,0" VerticalAlignment="Top" Width="400"/>
+        <Frame Visibility="Hidden" NavigationUIVisibility="Hidden" x:Name="frameCMPDetails" Margin="0,70,0,-0.4" >
+            
+        </Frame>
+    </Grid>
+</Page>

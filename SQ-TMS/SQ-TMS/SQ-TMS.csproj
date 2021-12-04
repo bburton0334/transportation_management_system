@@ -55,11 +55,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AcceptNewCustomers.xaml.cs">
+      <DependentUpon>AcceptNewCustomers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPortal.xaml.cs">
+      <DependentUpon>AdminPortal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buyer-ContractMarketplace.xaml.cs">
+      <DependentUpon>Buyer-ContractMarketplace.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Buyer.cs" />
+    <Compile Include="BuyerPortal.xaml.cs">
+      <DependentUpon>BuyerPortal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contract.cs" />
     <Compile Include="CustomControl.cs" />
     <Compile Include="MainWindow.xaml.cs" />
     <Compile Include="Planner.cs" />
+    <Compile Include="PlannerPortal.xaml.cs">
+      <DependentUpon>PlannerPortal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RequestUpdate.cs" />
+    <Compile Include="ReviewExistingCustomers.xaml.cs">
+      <DependentUpon>ReviewExistingCustomers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShipmentInfo.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="AdminUpdate.cs" />
@@ -67,9 +86,33 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="AcceptNewCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminPortal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buyer-ContractMarketplace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuyerPortal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PlannerPortal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReviewExistingCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -119,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="center-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

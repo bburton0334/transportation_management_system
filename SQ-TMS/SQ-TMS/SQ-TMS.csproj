@@ -70,6 +70,9 @@
     </Compile>
     <Compile Include="Contract.cs" />
     <Compile Include="CustomControl.cs" />
+    <Compile Include="InitiateOrder.xaml.cs">
+      <DependentUpon>InitiateOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs" />
     <Compile Include="Planner.cs" />
     <Compile Include="PlannerPortal.xaml.cs">
@@ -86,6 +89,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TMSData.cs" />
     <Page Include="AcceptNewCustomers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BuyerPortal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InitiateOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

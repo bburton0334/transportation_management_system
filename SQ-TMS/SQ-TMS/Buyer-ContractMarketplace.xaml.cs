@@ -20,9 +20,6 @@ namespace SQ_TMS
     /// </summary>
     public partial class Buyer_ContractMarketplace : Page
     {
-        bool isRCVisible = false;
-        bool isNCVisible = false;
-
         public Buyer_ContractMarketplace()
         {
             InitializeComponent();
@@ -32,14 +29,12 @@ namespace SQ_TMS
         {
             frameCMPDetails.Content = new ReviewExistingCustomers();
             frameCMPDetails.Visibility = Visibility.Visible;
-            isRCVisible = true;
         }
 
         private void btnAcceptNewCustomers_Click(object sender, RoutedEventArgs e)
         {
             frameCMPDetails.Content = new AcceptNewCustomers();
             frameCMPDetails.Visibility = Visibility.Visible;
-            isNCVisible = true;
         }
     }
 }

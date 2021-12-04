@@ -23,6 +23,7 @@ namespace SQ_TMS
     public partial class BuyerPortal : Page
     {
         bool isCMPVisible = false;
+        bool isInitiatingOrdersVisible = false;
 
         public BuyerPortal()
         {
@@ -32,6 +33,8 @@ namespace SQ_TMS
 
         private void btnContractMarketplace_Click(object sender, RoutedEventArgs e)
         {
+            frameContractMarketplace.Visibility = Visibility.Hidden;
+
             if (isCMPVisible == false)
             {
                 frameContractMarketplace.Content = new Buyer_ContractMarketplace();
@@ -42,6 +45,23 @@ namespace SQ_TMS
             {
                 frameContractMarketplace.Visibility = Visibility.Hidden;
                 isCMPVisible = false;
+            }
+        }
+
+        private void btnInitiateOrder_Click(object sender, RoutedEventArgs e)
+        {
+            frameContractMarketplace.Visibility = Visibility.Hidden;
+
+            if (isInitiatingOrdersVisible == false)
+            {
+                frameContractMarketplace.Content = new InitiateOrder();
+                frameContractMarketplace.Visibility = Visibility.Visible;
+                isInitiatingOrdersVisible = true;
+            }
+            else
+            {
+                frameContractMarketplace.Visibility = Visibility.Hidden;
+                isInitiatingOrdersVisible = false;
             }
         }
     }

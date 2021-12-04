@@ -27,17 +27,12 @@ namespace SQ_TMS
             InitializeComponent();
 
             BtnBack.Visibility = Visibility.Hidden;
-
-            DispatcherTimer LiveTime = new DispatcherTimer();
-            LiveTime.Interval = TimeSpan.FromSeconds(1);
-            LiveTime.Tick += timer_Tick;
-            LiveTime.Start();
+            LiveTimeLabel.Content = "Thursday, Dec, 02 2021 10:35:22 PM";
         }
 
         void timer_Tick(object sender, EventArgs e)
         {
             LiveTimeLabel.Content = "Thursday, Dec, 02 2021 10:35:22 PM";
-            //LiveTimeLabel.Content = DateTime.Now.ToString("dddd, MMM, dd yyyy HH:mm:ss tt");
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

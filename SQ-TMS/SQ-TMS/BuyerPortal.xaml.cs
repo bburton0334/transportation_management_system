@@ -24,6 +24,7 @@ namespace SQ_TMS
     {
         bool isCMPVisible = false;
         bool isInitiatingOrdersVisible = false;
+        bool isProcessOrderVisible = false;
 
         public BuyerPortal()
         {
@@ -62,6 +63,24 @@ namespace SQ_TMS
             {
                 frameContractMarketplace.Visibility = Visibility.Hidden;
                 isInitiatingOrdersVisible = false;
+            }
+        }
+
+        private void btnProcessInvoice_Click(object sender, RoutedEventArgs e)
+        {
+            // showing or hiding process invoice page
+            frameContractMarketplace.Visibility = Visibility.Hidden;
+
+            if (isProcessOrderVisible == false)
+            {
+                frameContractMarketplace.Content = new ProcessOrder();
+                frameContractMarketplace.Visibility = Visibility.Visible;
+                isProcessOrderVisible = true;
+            }
+            else
+            {
+                frameContractMarketplace.Visibility = Visibility.Hidden;
+                isProcessOrderVisible = false;
             }
         }
     }

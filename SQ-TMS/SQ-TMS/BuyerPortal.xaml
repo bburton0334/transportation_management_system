@@ -34,7 +34,7 @@
 
 
             <Frame NavigationUIVisibility="Hidden" x:Name="frameContractMarketplace" Margin="164,0,0.4,0"/>
-            <Button HorizontalContentAlignment="Center" Content="PROCESS INVOICE" HorizontalAlignment="Left" Margin="14,130,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
+            <Button Click="btnProcessInvoice_Click" x:Name="btnProcessInvoice" HorizontalContentAlignment="Center" Content="PROCESS INVOICE" HorizontalAlignment="Left" Margin="14,130,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="5"/>

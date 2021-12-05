@@ -78,6 +78,9 @@
     <Compile Include="PlannerPortal.xaml.cs">
       <DependentUpon>PlannerPortal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProcessOrder.xaml.cs">
+      <DependentUpon>ProcessOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RequestUpdate.cs" />
     <Compile Include="ReviewExistingCustomers.xaml.cs">
       <DependentUpon>ReviewExistingCustomers.xaml</DependentUpon>
@@ -115,6 +118,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PlannerPortal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

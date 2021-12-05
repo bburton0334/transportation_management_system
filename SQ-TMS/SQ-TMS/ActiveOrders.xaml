@@ -1,0 +1,18 @@
+﻿<Page x:Class="SQ_TMS.ActiveOrders"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SQ_TMS"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ActiveOrders">
+
+    <Grid Background="#FF141414">
+        <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="40,38,0,0" VerticalAlignment="Top" Width="240"/>
+        <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="280,38,0,0" VerticalAlignment="Top" Width="400"/>
+        <Label Content="VIEWING ACTIVE ORDERS" HorizontalAlignment="Left" Margin="55,13,0,0" VerticalAlignment="Top" Height="27" Foreground="#FF969696" FontSize="18" FontFamily="Agency FB" FontWeight="Bold" Width="175"/>
+        <DataGrid x:Name="gridActiveOrders" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="290" Margin="40,70,0,0" VerticalAlignment="Top" Width="510" Background="#FF373737" BorderBrush="#FFABADB3" AlternatingRowBackground="#FF343434" AreRowDetailsFrozen="True" BorderThickness="2"/>
+
+    </Grid>
+</Page>

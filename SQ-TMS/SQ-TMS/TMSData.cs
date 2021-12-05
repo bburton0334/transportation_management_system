@@ -11,6 +11,14 @@ namespace SQ_TMS
         // holds list of Shipment objects
         // This list would later be inserted into the database
         public static List<Shipment> shipments = new List<Shipment>();
+        
+        // holds amount of days passed by Planner
+        public static int TotalDaysPassed = 0;
 
+        // holds default logfile path
+        public static string logFilePath = "C:\\TMSTemp\\";
+
+        // holds log file name
+        public static string LogFileName = "log.txt";
     }
 }

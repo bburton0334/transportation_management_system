@@ -28,6 +28,8 @@ namespace SQ_TMS
 
             BtnBack.Visibility = Visibility.Hidden;
             LiveTimeLabel.Content = "Thursday, Dec, 02 2021 10:35:22 PM";
+
+            Logger.Log("TMS Started");
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -70,6 +72,11 @@ namespace SQ_TMS
             Main.Content = new AdminPortal();
             Main.Visibility = Visibility.Visible;
             BtnBack.Visibility = Visibility.Visible;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Logger.Log("TMS Terminated");
         }
     }
 }

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,6 +59,9 @@
     <Compile Include="AcceptNewCustomers.xaml.cs">
       <DependentUpon>AcceptNewCustomers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ActiveOrders.xaml.cs">
+      <DependentUpon>ActiveOrders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminPortal.xaml.cs">
       <DependentUpon>AdminPortal.xaml</DependentUpon>
     </Compile>
@@ -68,12 +72,22 @@
     <Compile Include="BuyerPortal.xaml.cs">
       <DependentUpon>BuyerPortal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Configuration.xaml.cs">
+      <DependentUpon>Configuration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmOrders.xaml.cs">
+      <DependentUpon>ConfirmOrders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Contract.cs" />
     <Compile Include="CustomControl.cs" />
     <Compile Include="InitiateOrder.xaml.cs">
       <DependentUpon>InitiateOrder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="MainWindow.xaml.cs" />
+    <Compile Include="ManageOrders.xaml.cs">
+      <DependentUpon>ManageOrders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Planner.cs" />
     <Compile Include="PlannerPortal.xaml.cs">
       <DependentUpon>PlannerPortal.xaml</DependentUpon>
@@ -85,6 +99,9 @@
     <Compile Include="ReviewExistingCustomers.xaml.cs">
       <DependentUpon>ReviewExistingCustomers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReviewLogFiles.xaml.cs">
+      <DependentUpon>ReviewLogFiles.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShipmentInfo.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="AdminUpdate.cs" />
@@ -94,6 +111,10 @@
     </Compile>
     <Compile Include="TMSData.cs" />
     <Page Include="AcceptNewCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ActiveOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,6 +130,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Configuration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfirmOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InitiateOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +145,10 @@
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManageOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PlannerPortal.xaml">
       <SubType>Designer</SubType>
@@ -126,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReviewExistingCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReviewLogFiles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

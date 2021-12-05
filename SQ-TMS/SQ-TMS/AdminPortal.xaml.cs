@@ -20,9 +20,56 @@ namespace SQ_TMS
     /// </summary>
     public partial class AdminPortal : Page
     {
+        bool isConfigVisible = false;
+        bool isReviewVisible = false;
+
         public AdminPortal()
         {
             InitializeComponent();
+        }
+
+        private void btnConfiguration_Click(object sender, RoutedEventArgs e)
+        {
+            frameAdminPortal.Visibility = Visibility.Hidden;
+
+            if (isConfigVisible == false)
+            {
+                frameAdminPortal.Content = new Configuration();
+                frameAdminPortal.Visibility = Visibility.Visible;
+                isConfigVisible = true;
+            }
+            else
+            {
+                frameAdminPortal.Visibility = Visibility.Hidden;
+                isConfigVisible = false;
+            }
+        }
+
+        private void btnReviewLog_Click(object sender, RoutedEventArgs e)
+        {
+            frameAdminPortal.Visibility = Visibility.Hidden;
+
+            if (isReviewVisible == false)
+            {
+                frameAdminPortal.Content = new ReviewLogFiles();
+                frameAdminPortal.Visibility = Visibility.Visible;
+                isReviewVisible = true;
+            }
+            else
+            {
+                frameAdminPortal.Visibility = Visibility.Hidden;
+                isReviewVisible = false;
+            }
+        }
+
+        private void btnAlterData_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("havent created this page yet");
+        }
+
+        private void btnBackup_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("havent created this page yet");
         }
     }
 }

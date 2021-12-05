@@ -14,14 +14,14 @@
                 <Rectangle Fill="#FF292929" HorizontalAlignment="Left" Height="448" VerticalAlignment="Top" Width="159"/>
                 <Label Content="Planner" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFE2E2E2" FontWeight="Bold" FontFamily="Agency FB" FontSize="18"/>
                 <Rectangle Fill="#FF151515" HorizontalAlignment="Left" Height="2" Margin="14,38,0,0" VerticalAlignment="Top" Width="130"/>
-                <Button HorizontalContentAlignment="Center" Content="RECEIVE CONTRACTS" HorizontalAlignment="Left" Margin="14,54,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="11" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
+                <Button Click="btnManageOrders_Click" x:Name="btnManageOrders" HorizontalContentAlignment="Center" Content="MANAGE ORDERS" HorizontalAlignment="Left" Margin="14,54,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button HorizontalContentAlignment="Center" Content="REVIEW CONTRACTS" HorizontalAlignment="Left" Margin="14,89,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="11" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
+                <Button Click="btnPassTime_Click" x:Name="btnPassTime" HorizontalContentAlignment="Center" Content="PASS TIME" HorizontalAlignment="Left" Margin="14,92,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>
@@ -30,6 +30,31 @@
                 </Button>
                 <Image HorizontalAlignment="Left" Height="448" Margin="164,0,0,0" VerticalAlignment="Top" Width="634" Source="background.jpg" Stretch="Fill" Opacity="0.6"/>
                 <Image HorizontalAlignment="Left" Height="125" Margin="319,169,0,0" VerticalAlignment="Top" Width="320" Source="center-logo.png" Opacity="0.2"/>
+
+
+
+                <Frame x:Name="framePlannerPortal" NavigationUIVisibility="Hidden" Margin="164,0,0.4,0"></Frame>
+                <Button Click="btnConfirmOrders_Click" x:Name="btnConfirmOrders" HorizontalContentAlignment="Center" Content="CONFIRM ORDERS" HorizontalAlignment="Left" Margin="14,130,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Click="btnActiveOrders_Click" x:Name="btnActiveOrders" HorizontalContentAlignment="Center" Content="ACTIVE ORDERS" HorizontalAlignment="Left" Margin="14,168,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Click="btnGenerateReport_Click" x:Name="btnGenerateReport" HorizontalContentAlignment="Center" Content="GENERATE REPORT" HorizontalAlignment="Left" Margin="14,205,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Grid>
         </Border>
     </Grid>

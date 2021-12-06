@@ -14,6 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace SQ_TMS
 {
@@ -27,48 +31,64 @@ namespace SQ_TMS
         public AcceptNewCustomers()
         {
             InitializeComponent();
-            // LOADNEWCUSTOMERDATA() WOULD BE CALLED HERE
         }
 
-        private bool LoadNewCustomerData()
+        private DataTable LoadNewCustomerData()
         {
-            bool dataLoaded = false;
+            DataTable custInfo = new DataTable();
 
-            SqlDataReader dr = null;
-            try
+            string conStr = ConfigurationManager.ConnectionStrings["cmp"].ConnectionString;
+
+            using(MySqlConnection con = new MySqlConnection(conStr))
             {
-                // HERE IS WHERE THE YOU WOULD CONNECT TO CONTRACT MARKET PLACE SQL DATABASE TO REVIEVE DATA
-
-                // STORE DATA INTO LINE 24: LIST OF CONTRACT
-
-                // while reading, instert data into list
-
-                newContract.Add(new Contract()
+                using(MySqlCommand cmd = new MySqlCommand("SELECT * FROM cmp.Contract", con))
                 {
-                    ClientName = dr.GetString(dr.GetOrdinal("CLIENT_NAME")),
-                    JobType = dr.GetString(dr.GetOrdinal("JOB_TYPE")),
-                    Quantity = dr.GetInt32(dr.GetOrdinal("QUANTITY")),
-                    Origin = dr.GetString(dr.GetOrdinal("ORIGIN")),
-                    Destination = dr.GetString(dr.GetOrdinal("DESTINATION")),
-                    VanType = dr.GetString(dr.GetOrdinal("VAN_TYPE"))
-                });
+                    con.Open();
 
-                // AFTERWARDS FILL DataGrid WITH DATABASE DATA
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                // CALL TO LOGGER
+                    MySqlDataReader dr = cmd.ExecuteReader();
+                    custInfo.Load(dr);
+                }
             }
 
-            return dataLoaded;
+            return custInfo;
         }
 
         private void btnAcceptCustomer_Click(object sender, RoutedEventArgs e)
         {
-            string customerID = txtCustomerName.Text;
+            string clientName = null;
+            int jobType = 0;
+            int quantity = 0;
+            string origin = null;
+            string destination = null;
+            int vanType = 0;
 
-            
+            foreach (DataRowView row in gridNewCustomers.SelectedItems)
+            {
+                System.Data.DataRow MyRow = row.Row;
+                clientName = MyRow[0].ToString();
+                jobType = int.Parse(MyRow[1].ToString());
+                quantity = int.Parse(MyRow[2].ToString());
+                origin = MyRow[3].ToString();
+                destination = MyRow[4].ToString();
+                vanType = int.Parse(MyRow[5].ToString());
+            }
+
+            // creating new contract object
+            TMSData.contracts.Add(new Contract()
+            {
+                ClientName = clientName,
+                JobType = jobType,
+                Quantity = quantity,
+                Origin = origin,
+                Destination = destination,
+                VanType = vanType
+            });
+
+        }
+
+        private void gridNewCustomers_Loaded(object sender, RoutedEventArgs e)
+        {
+            gridNewCustomers.DataContext = LoadNewCustomerData();
         }
     }
 }

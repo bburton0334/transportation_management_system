@@ -9,9 +9,7 @@
       Title="AcceptNewCustomers">
 
     <Grid>
-        <DataGrid x:Name="gridNewCustomers" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="200" Margin="40,0,0,0" VerticalAlignment="Top" Width="480" Background="#FF373737" BorderBrush="#FFABADB3" AlternatingRowBackground="#FF343434" AreRowDetailsFrozen="True" BorderThickness="2"/>
-        <TextBox x:Name="txtCustomerName" HorizontalAlignment="Left" Height="25" Margin="40,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Background="#FFA5A5A5" SelectionBrush="#FF0003E7" FontFamily="Agency FB"/>
-        <Label Content="Enter Customer Name" HorizontalAlignment="Left" Margin="40,216,0,0" VerticalAlignment="Top" Width="140" Foreground="LightGray" FontFamily="Agency FB"/>
-        <Button Click="btnAcceptCustomer_Click" x:Name="btnAcceptCustomer" Content="Accept This Customer" HorizontalAlignment="Left" Margin="220,240,0,0" VerticalAlignment="Top" Width="120" Height="25" Background="#FFABADB3" FontFamily="Agency FB"/>
+        <DataGrid Loaded="gridNewCustomers_Loaded" x:Name="gridNewCustomers" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="200" Margin="40,0,0,0" VerticalAlignment="Top" Width="480" Background="#FF565656" BorderBrush="#FFABADB3" AlternatingRowBackground="DimGray" AreRowDetailsFrozen="True" BorderThickness="2" RowBackground="#FFB7B7B7"/>
+        <Button Click="btnAcceptCustomer_Click" x:Name="btnAcceptCustomer" Content="Accept the Selected Customer" HorizontalAlignment="Left" Margin="160,240,0,0" VerticalAlignment="Top" Width="240" Height="25" Background="#FFABADB3" FontFamily="Agency FB"/>
     </Grid>
 </Page>

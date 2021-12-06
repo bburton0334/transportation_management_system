@@ -26,10 +26,21 @@ namespace SQ_TMS
         {
             InitializeComponent();
 
+            frameLoadIn.Visibility = Visibility.Visible;
+            frameLoadIn.Content = new StartLoadIn();
+
+            LoadWait();
+
             BtnBack.Visibility = Visibility.Hidden;
             LiveTimeLabel.Content = "Thursday, Dec, 02 2021 10:35:22 PM";
 
             Logger.Log("TMS Started");
+        }
+
+        private async void LoadWait()
+        {
+            await Task.Delay(TimeSpan.FromSeconds(3));
+            frameLoadIn.Visibility = Visibility.Hidden;
         }
 
         void timer_Tick(object sender, EventArgs e)

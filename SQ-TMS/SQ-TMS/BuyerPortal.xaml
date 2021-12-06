@@ -41,6 +41,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
+            <Frame NavigationUIVisibility="Hidden" x:Name="buyerNotification" Margin="559,19,19.4,349"></Frame>
         </Grid>
     </Border>
 </Page>

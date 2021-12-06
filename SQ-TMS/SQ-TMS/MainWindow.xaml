@@ -133,6 +133,7 @@
 
             </Frame>
             <Button x:Name="BtnBack" Content="BACK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Height="27" Background="{x:Null}" FontWeight="Bold" FontStyle="Italic" Foreground="#FFCBCBCB" Click="BtnBack_Click"/>
+            <Frame x:Name="frameLoadIn" NavigationUIVisibility="Hidden" Margin="0,0,0.4,0" Grid.RowSpan="2" Grid.ColumnSpan="2"></Frame>
         </Grid>
     </Border>
 </Window>

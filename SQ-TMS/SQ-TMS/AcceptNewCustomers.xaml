@@ -10,6 +10,7 @@
 
     <Grid>
         <DataGrid Loaded="gridNewCustomers_Loaded" x:Name="gridNewCustomers" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="200" Margin="40,0,0,0" VerticalAlignment="Top" Width="480" Background="#FF565656" BorderBrush="#FFABADB3" AlternatingRowBackground="DimGray" AreRowDetailsFrozen="True" BorderThickness="2" RowBackground="#FFB7B7B7"/>
-        <Button Click="btnAcceptCustomer_Click" x:Name="btnAcceptCustomer" Content="Accept the Selected Customer" HorizontalAlignment="Left" Margin="160,240,0,0" VerticalAlignment="Top" Width="240" Height="25" Background="#FFABADB3" FontFamily="Agency FB"/>
+        <Button Click="btnAcceptCustomer_Click" x:Name="btnAcceptCustomer" Content="Accept the Selected Customer" HorizontalAlignment="Left" Margin="160,220,0,0" VerticalAlignment="Top" Width="240" Height="25" Background="#FFABADB3" FontFamily="Agency FB"/>
+        <Label x:Name="lblFeedback" Content="" HorizontalAlignment="Left" Margin="40,265,0,0" VerticalAlignment="Top" Width="480" Foreground="White" FontWeight="Bold" FontFamily="Agency FB" Height="35" FontSize="16"/>
     </Grid>
 </Page>

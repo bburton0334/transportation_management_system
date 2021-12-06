@@ -9,6 +9,7 @@ namespace SQ_TMS
     // USED FOR CONTRACT MARKET PLACE TO STORE ACCEPTED CUSTOMER CONTRACTS
     public class Contract
     {
+        public int ContractID { get; set; }
         public string ClientName { get; set; }
         public int JobType { get; set; }
         public int Quantity { get; set; }

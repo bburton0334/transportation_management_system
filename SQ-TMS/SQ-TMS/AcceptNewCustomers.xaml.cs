@@ -26,8 +26,6 @@ namespace SQ_TMS
     /// </summary>
     public partial class AcceptNewCustomers : Page
     {
-        List<Contract> newContract = new List<Contract>();
-
         public AcceptNewCustomers()
         {
             InitializeComponent();
@@ -55,35 +53,57 @@ namespace SQ_TMS
 
         private void btnAcceptCustomer_Click(object sender, RoutedEventArgs e)
         {
-            string clientName = null;
-            int jobType = 0;
-            int quantity = 0;
-            string origin = null;
-            string destination = null;
-            int vanType = 0;
-
-            foreach (DataRowView row in gridNewCustomers.SelectedItems)
+            if (gridNewCustomers.SelectedCells.Count > 0)
             {
-                System.Data.DataRow MyRow = row.Row;
-                clientName = MyRow[0].ToString();
-                jobType = int.Parse(MyRow[1].ToString());
-                quantity = int.Parse(MyRow[2].ToString());
-                origin = MyRow[3].ToString();
-                destination = MyRow[4].ToString();
-                vanType = int.Parse(MyRow[5].ToString());
+                string clientName = null;
+                int jobType = 0;
+                int quantity = 0;
+                string origin = null;
+                string destination = null;
+                int vanType = 0;
+
+                foreach (DataRowView row in gridNewCustomers.SelectedItems)
+                {
+                    System.Data.DataRow MyRow = row.Row;
+                    clientName = MyRow[0].ToString();
+                    jobType = int.Parse(MyRow[1].ToString());
+                    quantity = int.Parse(MyRow[2].ToString());
+                    origin = MyRow[3].ToString();
+                    destination = MyRow[4].ToString();
+                    vanType = int.Parse(MyRow[5].ToString());
+                }
+
+                int newID = 0;
+                if (TMSData.contracts?.Any() != true)
+                {
+                    newID = 1;
+                    System.Windows.MessageBox.Show(newID.ToString());
+                }
+                else
+                {
+                    int maxID = TMSData.contracts.Max(t => t.ContractID);
+                    newID = maxID + 1;
+                    System.Windows.MessageBox.Show(newID.ToString());
+                }
+
+                // creating new contract object
+                TMSData.contracts.Add(new Contract()
+                {
+                    ContractID = newID,
+                    ClientName = clientName,
+                    JobType = jobType,
+                    Quantity = quantity,
+                    Origin = origin,
+                    Destination = destination,
+                    VanType = vanType
+                });
+
+                lblFeedback.Content = "[SUCCESS] Client contract has been accepted.";
             }
-
-            // creating new contract object
-            TMSData.contracts.Add(new Contract()
+            else
             {
-                ClientName = clientName,
-                JobType = jobType,
-                Quantity = quantity,
-                Origin = origin,
-                Destination = destination,
-                VanType = vanType
-            });
-
+                lblFeedback.Content = "[FAILURE] You must select a row to accept client contract.";
+            }
         }
 
         private void gridNewCustomers_Loaded(object sender, RoutedEventArgs e)

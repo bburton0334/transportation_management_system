@@ -23,7 +23,6 @@ namespace SQ_TMS
         public Notification()
         {
             InitializeComponent();
-            lblNotification.Content = TMSData.currentNotification;
         }
     }
 }

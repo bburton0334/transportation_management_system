@@ -28,7 +28,7 @@ namespace SQ_TMS
 
         private void Image_Initialized(object sender, EventArgs e)
         {
-            DoubleAnimation da = new DoubleAnimation(0, TimeSpan.FromSeconds(3));
+            DoubleAnimation da = new DoubleAnimation(0, TimeSpan.FromSeconds(1.5));
             imgLoad.BeginAnimation(Image.OpacityProperty, da);
         }
     }

@@ -29,5 +29,10 @@ namespace SQ_TMS
 
             txtLogFileViewer.Text = File.ReadAllText(fullPath);
         }
+
+        private void txtLogFileViewer_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

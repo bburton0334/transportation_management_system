@@ -25,6 +25,7 @@ namespace SQ_TMS
         bool isManageOrdersVisible = false;
         bool isConfirmOrdersVisible = false;
         bool isActiveOrdersVisible = false;
+        bool isGRVisible = false;
         //bool isGenerateReportVisible = false;
 
         public PlannerPortal()
@@ -99,7 +100,19 @@ namespace SQ_TMS
 
         private void btnGenerateReport_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("havent created this page yet");
+            framePlannerPortal.Visibility = Visibility.Hidden;
+
+            if (isGRVisible == false)
+            {
+                framePlannerPortal.Content = new GenerateReport();
+                framePlannerPortal.Visibility = Visibility.Visible;
+                isGRVisible = true;
+            }
+            else
+            {
+                framePlannerPortal.Visibility = Visibility.Hidden;
+                isGRVisible = false;
+            }
         }
     }
 }

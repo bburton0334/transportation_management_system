@@ -12,7 +12,7 @@
         <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="40,38,0,0" VerticalAlignment="Top" Width="240"/>
         <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="280,38,0,0" VerticalAlignment="Top" Width="400"/>
         <Label Content="CONFIRMING ORDERS FOR COMPLETION" HorizontalAlignment="Left" Margin="55,13,0,0" VerticalAlignment="Top" Height="27" Foreground="#FF969696" FontSize="18" FontFamily="Agency FB" FontWeight="Bold" Width="265"/>
-        <DataGrid x:Name="gridConfirmOrders" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="170" Margin="40,70,0,0" VerticalAlignment="Top" Width="510" Background="#FF373737" BorderBrush="#FFABADB3" AlternatingRowBackground="#FF343434" AreRowDetailsFrozen="True" BorderThickness="2"/>
+        <TextBlock x:Name="gridConfirmOrders" HorizontalAlignment="Left" Height="170" Margin="40,70,0,0" VerticalAlignment="Top" Width="510" Background="#FFB4B4B4"/>
         <TextBox x:Name="txtShipmentID" HorizontalAlignment="Left" Height="25" Margin="40,285,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#FFA5A5A5" SelectionBrush="#FF0003E7" FontFamily="Agency FB"/>
         <Label Content="Enter ShipmentID" HorizontalAlignment="Left" Margin="40,261,0,0" VerticalAlignment="Top" Width="140" Foreground="LightGray" FontFamily="Agency FB"/>
         <Button Click="btnCompleteOrder_Click" x:Name="btnCompleteOrder" Content="Confirm Order Completion" HorizontalAlignment="Left" Margin="200,285,0,0" VerticalAlignment="Top" Width="120" Height="25" Background="#FFABADB3" FontFamily="Agency FB"/>

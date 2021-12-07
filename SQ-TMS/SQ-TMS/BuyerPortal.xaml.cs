@@ -82,6 +82,26 @@ namespace SQ_TMS
                 frameContractMarketplace.Visibility = Visibility.Hidden;
                 isProcessOrderVisible = false;
             }
+
+
+            //string query = "INSERT INTO orders (OrderDate, ShipAddress, ShipCity) VALUES('" + orderDate + "', '" + ShipAddress + "', '" + ShipCity + "')";
+
+            //if (this.OpenConnection() == true)
+            //{
+            //    //create mysql command
+            //    MySqlCommand cmd = new MySqlCommand();
+            //    //Assign the query using CommandText
+            //    cmd.CommandText = query;
+            //    //Assign the connection using Connection
+            //    cmd.Connection = connection;
+
+            //    //Execute query
+            //    cmd.ExecuteNonQuery();
+
+            //    //close connection
+            //    this.CloseConnection();
+            //}
+
         }
     }
 }

@@ -22,6 +22,8 @@ namespace SQ_TMS
     {
         bool isConfigVisible = false;
         bool isReviewVisible = false;
+        bool isBackupVisible = false;
+        bool isAlterDataVisible = false;
 
         public AdminPortal()
         {
@@ -64,12 +66,36 @@ namespace SQ_TMS
 
         private void btnAlterData_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("havent created this page yet");
+            frameAdminPortal.Visibility = Visibility.Hidden;
+
+            if (isAlterDataVisible == false)
+            {
+                frameAdminPortal.Content = new AlterTMSData();
+                frameAdminPortal.Visibility = Visibility.Visible;
+                isAlterDataVisible = true;
+            }
+            else
+            {
+                frameAdminPortal.Visibility = Visibility.Hidden;
+                isAlterDataVisible = false;
+            }
         }
 
         private void btnBackup_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("havent created this page yet");
+            frameAdminPortal.Visibility = Visibility.Hidden;
+
+            if (isBackupVisible == false)
+            {
+                frameAdminPortal.Content = new InitiateBackup();
+                frameAdminPortal.Visibility = Visibility.Visible;
+                isBackupVisible = true;
+            }
+            else
+            {
+                frameAdminPortal.Visibility = Visibility.Hidden;
+                isBackupVisible = false;
+            }
         }
     }
 }

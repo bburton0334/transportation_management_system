@@ -27,7 +27,16 @@ namespace SQ_TMS
 
         private void btnCompleteOrder_Click(object sender, RoutedEventArgs e)
         {
+            bool isValid = String.IsNullOrWhiteSpace(txtShipmentID.Text);
 
+            if (!isValid)
+            {
+                lblFeedback.Content = "[SUCCESS] Order has been confirmed.";
+            }
+            else
+            {
+                lblFeedback.Content = "[FAILURE] You must eneter a value into the textbox.";
+            }
         }
     }
 }

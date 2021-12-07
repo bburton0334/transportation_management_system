@@ -40,7 +40,7 @@ namespace SQ_TMS
         {
             // getting directory location
             string path = TMSData.logFilePath;
-            string file = "log.txt";
+            string file = TMSData.LogFileName;
 
             // creating directory if does not exist
             Directory.CreateDirectory(path);

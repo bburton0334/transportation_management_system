@@ -12,7 +12,7 @@
         <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="40,38,0,0" VerticalAlignment="Top" Width="240"/>
         <Rectangle Fill="#FF2E2E2E" HorizontalAlignment="Left" Height="2" Margin="280,38,0,0" VerticalAlignment="Top" Width="400"/>
         <Label Content="VIEWING ACTIVE ORDERS" HorizontalAlignment="Left" Margin="55,13,0,0" VerticalAlignment="Top" Height="27" Foreground="#FF969696" FontSize="18" FontFamily="Agency FB" FontWeight="Bold" Width="175"/>
-        <DataGrid x:Name="gridActiveOrders" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="290" Margin="40,70,0,0" VerticalAlignment="Top" Width="510" Background="#FF373737" BorderBrush="#FFABADB3" AlternatingRowBackground="#FF343434" AreRowDetailsFrozen="True" BorderThickness="2"/>
+        <TextBlock x:Name="gridActiveOrders" HorizontalAlignment="Left" Height="290" Margin="40,70,0,0" VerticalAlignment="Top" Width="510" Background="#FFB0B0B0"/>
 
     </Grid>
 </Page>

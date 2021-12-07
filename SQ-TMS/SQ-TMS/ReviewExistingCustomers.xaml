@@ -7,8 +7,8 @@
       mc:Ignorable="d"
       Title="ReviewExistingCustomers" Width="630" Height="380">
 
-    <Grid >
-        <DataGrid x:Name="gridExistingCustomers" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="320" Margin="40,0,0,0" VerticalAlignment="Top" Width="480" Background="#FF373737" BorderBrush="#FFABADB3" AlternatingRowBackground="#FF343434" AreRowDetailsFrozen="True" BorderThickness="2"/>
+    <Grid Background="#FF141414">
+        <TextBlock Name="gridExistingCustomers" HorizontalAlignment="Left" Margin="40,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="280" Width="480" Background="#FF868686"/>
 
     </Grid>
 </Page>

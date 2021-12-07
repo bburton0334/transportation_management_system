@@ -27,7 +27,32 @@ namespace SQ_TMS
 
         private void btnSubmitOrder_Click(object sender, RoutedEventArgs e)
         {
+            bool isValidID = String.IsNullOrWhiteSpace(txtShipmentID.Text);
+            bool isValidCarr = String.IsNullOrWhiteSpace(txtCarriers.Text);
+            bool isValidTrips = String.IsNullOrWhiteSpace(txtTrips.Text);
 
+            if (!isValidID && !isValidCarr && !isValidTrips)
+            {
+                try
+                {
+                    int numTrips = int.Parse(txtTrips.Text);
+                    int ID = int.Parse(txtShipmentID.Text);
+                    string carrier = txtShipmentID.Text.ToString();
+
+                    // do something with values
+
+                    lblFeedback.Content = "[SUCCESS] Order has been approved by Planner.";
+
+                }
+                catch
+                {
+                    lblFeedback.Content = "[FAILURE] textbox values must be in correct format.";
+                }
+            }
+            else
+            {
+                lblFeedback.Content = "[FAILURE] All textboxes must have values.";
+            }
         }
     }
 }

@@ -34,12 +34,13 @@ namespace SQ_TMS
             BtnBack.Visibility = Visibility.Hidden;
             LiveTimeLabel.Content = "Thursday, Dec, 02 2021 10:35:22 PM";
 
+            Invoice.Generate("This is a test");
             Logger.Log("TMS Started");
         }
 
         private async void LoadWait()
         {
-            await Task.Delay(TimeSpan.FromSeconds(3));
+            await Task.Delay(TimeSpan.FromSeconds(1.5));
             frameLoadIn.Visibility = Visibility.Hidden;
         }
 

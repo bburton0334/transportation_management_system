@@ -18,11 +18,27 @@ namespace SQ_TMS
         public static int TotalDaysPassed = 0;
 
         // holds default logfile path. Can be changed by 
-        public static string logFilePath = "C:\\TMSTemp\\";
+        public static string logFilePath = "C:\\TMSTemp\\Log\\";
 
         // holds log file name
         public static string LogFileName = "log.txt";
 
-        public static string currentNotification = null;
+        public static string InvoiceFilePath = "C:\\TMSTemp\\Invoice\\";
+
+        public static string InvoiceFileName = "Invoice.txt";
+
+        public static string ReportFileDir = "C:\\TMSTemp\\Report\\";
+
+        public static string ReportFileName = "SummaryReport.txt";
+
+        public static string BackupFileDir = "C:\\TMSTemp\\Backup\\";
+
+        public static string BackupFileName = "BackupData.txt";
+
+        public static double FTLRate = 4.985;   //default/ average according to document 
+
+        public static double LTLRate = 0.2995; //default/ average according to document
+
+        public static int ReeferCharge = 5;     // document says between 5-10%. i just put 5 cause im not sure. represents % value
     }
 }

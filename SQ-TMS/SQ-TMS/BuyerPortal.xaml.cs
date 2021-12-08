@@ -15,23 +15,38 @@ using System.Windows.Shapes;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for BuyerPortal.xaml
-    /// </summary>
-    /// 
-
+    //===================================================================================================================
+    /// \class BuyerPortal
+    ///
+    /// \brief The purpose of this class is to call function that
+    /// \details <b>Details</b>
+    ///  The purpose of this class is to call the function which transfers to the page that revews the customers and 
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public partial class BuyerPortal : Page
     {
         bool isCMPVisible = false;
         bool isInitiatingOrdersVisible = false;
         bool isProcessOrderVisible = false;
-
         public BuyerPortal()
         {
             InitializeComponent();
 
         }
-
+        //===============================================================================================================
+        /// \brief btnContractMarketplace_Click
+        /// \details <b>Details</b>
+        ///
+        /// This method is called to tranist to the window where the buyer could review and/or accept new customers
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        ///
+        /// \see ~Buyer()
+        //===============================================================================================================
+    
         private void btnContractMarketplace_Click(object sender, RoutedEventArgs e)
         {
             frameContractMarketplace.Visibility = Visibility.Hidden;
@@ -49,6 +64,18 @@ namespace SQ_TMS
             }
         }
 
+        //===============================================================================================================
+        /// \brief btnInitiateOrder_Click
+        /// \details <b>Details</b>
+        ///
+        /// This method is called to create a new order
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        ///
+        /// \see ~Buyer()
+        //===============================================================================================================
         private void btnInitiateOrder_Click(object sender, RoutedEventArgs e)
         {
             frameContractMarketplace.Visibility = Visibility.Hidden;
@@ -66,6 +93,19 @@ namespace SQ_TMS
             }
         }
 
+        //===============================================================================================================
+        /// \brief btnProcessInvoice_Click
+        /// \details <b>Details</b>
+        ///
+        /// This method is called to proccess the invoice that is associated with the new order placed
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        ///
+        /// \see ~Buyer()
+        //===============================================================================================================
+        
         private void btnProcessInvoice_Click(object sender, RoutedEventArgs e)
         {
             // showing or hiding process invoice page
@@ -82,26 +122,6 @@ namespace SQ_TMS
                 frameContractMarketplace.Visibility = Visibility.Hidden;
                 isProcessOrderVisible = false;
             }
-
-
-            //string query = "INSERT INTO orders (OrderDate, ShipAddress, ShipCity) VALUES('" + orderDate + "', '" + ShipAddress + "', '" + ShipCity + "')";
-
-            //if (this.OpenConnection() == true)
-            //{
-            //    //create mysql command
-            //    MySqlCommand cmd = new MySqlCommand();
-            //    //Assign the query using CommandText
-            //    cmd.CommandText = query;
-            //    //Assign the connection using Connection
-            //    cmd.Connection = connection;
-
-            //    //Execute query
-            //    cmd.ExecuteNonQuery();
-
-            //    //close connection
-            //    this.CloseConnection();
-            //}
-
         }
     }
 }

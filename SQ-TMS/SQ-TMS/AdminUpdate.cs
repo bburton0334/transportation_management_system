@@ -12,9 +12,7 @@ namespace SQ_TMS
     /// \brief The purpose of this class is to create a AdminUpdate Object
     /// \details <b>Details</b>
     ///
-    /// AdminUpdate which contains public attribute AdminUpdate_ID which holds AdminUpdate ID .
-    /// This class contains a default consructor, along with a UpdateID function 
-    /// This class contains accessors and mutators for the private attributes, 
+    ///  It contains public attributes like, Au_updateID, Au_logFiles, Au_IPAddress, Au_ports, Au_rates, Au_carrierData, Au_routeTable, and Au_backup
     ///
     /// \author BNSM <i>Transportation Management System Experts</i>
     ///==================================================================================================================

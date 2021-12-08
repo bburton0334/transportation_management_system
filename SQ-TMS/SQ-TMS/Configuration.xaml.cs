@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,54 +17,29 @@ using System.Windows.Shapes;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for Configuration.xaml
-    /// </summary>
+    ///==================================================================================================================
+    /// \class Configuration
+    ///
+    /// \brief The purpose of this class is to call the method that allows the user to change the log file name, and to
+    ///  to allow the user to change the log file directory 
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    ///==================================================================================================================
     public partial class Configuration : Page
     {
         public Configuration()
         {
             InitializeComponent();
         }
-
-        private void btnSubmitInvFile_Click(object sender, RoutedEventArgs e)
-        {
-            bool isValid = String.IsNullOrWhiteSpace(txtInvoiceFileName.Text);
-
-            if (isValid == false)
-            {
-                DialogResult dr = System.Windows.Forms.MessageBox.Show("Are you sure you want to change the invoice file name? ", "Change Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-                if (dr == DialogResult.Yes)
-                {
-                    TMSData.InvoiceFileName = txtInvoiceFileName.Text;
-                    lblFeedback.Content = "[SUCCESS] Value changed.";
-                }
-            }
-            else
-            {
-                lblFeedback.Content = "[FAILURE] You must eneter a value into the textbox.";
-            }
-        }
-
-        private void btnSubmitInvDir_Click(object sender, RoutedEventArgs e)
-        {
-            bool isValid = String.IsNullOrWhiteSpace(txtInvoiceFileDirectory.Text);
-
-            if (!isValid)
-            {
-                DialogResult dr = System.Windows.Forms.MessageBox.Show("Are you sure you want to change the invoice file name? ", "Change Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-                if (dr == DialogResult.Yes)
-                {
-                    TMSData.InvoiceFilePath = txtInvoiceFileDirectory.Text;
-                    lblFeedback.Content = "[SUCCESS] Value changed.";
-                }
-            }
-            else
-            {
-                lblFeedback.Content = "[FAILURE] You must eneter a value into the textbox.";
-            }
-        }
-
+        //===============================================================================================================
+        /// \brief btnSubmitLogFile_Click
+        /// \details <b>Details</b>
+        ///
+        /// This method is called to allow the user to change the log file name
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        //===============================================================================================================
         private void btnSubmitLogFile_Click(object sender, RoutedEventArgs e)
         {
             bool isValid = String.IsNullOrWhiteSpace(txtLogFileName.Text);
@@ -83,6 +59,17 @@ namespace SQ_TMS
             }
         }
 
+        //===============================================================================================================
+        /// \brief btnSubmitLogDir_Click
+        /// \details <b>Details</b>
+        ///
+        /// This method is called to allow the user to change the log file directory
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        //===============================================================================================================
+        
         private void btnSubmitLogDir_Click(object sender, RoutedEventArgs e)
         {
             bool isValid = String.IsNullOrWhiteSpace(txtLogFileDirectory.Text);
@@ -100,6 +87,11 @@ namespace SQ_TMS
             {
                 lblFeedback.Content = "[FAILURE] You must eneter a value into the textbox.";
             }
+
+            string dir = txtLogFileDirectory.Text;
+            string fileName = txtLogFileName.Text;
+
+            File.Create(dir + fileName);
         }
     }
 }

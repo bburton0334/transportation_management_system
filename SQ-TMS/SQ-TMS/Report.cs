@@ -8,33 +8,49 @@ using System.Windows;
 
 namespace SQ_TMS
 {
+    //===================================================================================================================
+    /// \class Report
+    ///
+    /// \brief The purpose of this class is to hold functions which will handel the creation of the report
+    /// \details <b>Details</b>
+    ///
+    /// Report class contains 2 functions, one that is called outside the class which passes a string as a message,
+    /// and another with will store the passed string into a text folder in a specified directory.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public static class Report
     {
-        //============================================================================
-        // FUNCTION         : Generate
-        // DESCRIPTION      :
-        //      Function which passes the message parameter to the LogWrite function
-        //      so the message can be written to the log file.
-        // PARAMETERS       : message (holds the message to be logged)
-        // RETURNS          : none
-        //============================================================================
+
+        //===============================================================================================================
+        /// \brief Generate function
+        /// \details <b>Details</b>
+        ///
+        /// Function which passes the message parameter to the LogWrite function
+        /// so the message can be written to the log file.
+        /// \param message - <b>string</b> - contains the message that will be sent to the report file.
+        ///
+        /// \see ~Report()
+        //===============================================================================================================
         public static void Generate(string message)
         {
             ReportWriter(message);
         }
 
-        //============================================================================
-        // FUNCTION         : ReportWriter
-        // DESCRIPTION      :
-        //      Function which is called so the passed logMessage can be written to 
-        //      the log file. The function will get the current directory of the
-        //      service and write to the log file there. If a log.txt file does
-        //      not already exist, and new file will be created. The message
-        //      then be written to the log file in a format which states the time
-        //      and the message.
-        // PARAMETERS       : logMessage (holds the message to be logged)
-        // RETURNS          : none
-        //============================================================================
+        //===============================================================================================================
+        /// \brief ReportWriter function
+        /// \details <b>Details</b>
+        ///
+        /// Function which is called so the passed logMessage can be written to 
+        ///      the log file. The function will get the current directory of the
+        ///      service and write to the log file there. If a log.txt file does
+        ///      not already exist, and new file will be created. The message
+        ///      then be written to the log file in a format which states the time
+        ///      and the message.
+        /// \param logMessage - <b>string</b> - contains the message that will be sent to the report file.
+        ///
+        /// \see ~Report()
+        //===============================================================================================================
         private static void ReportWriter(string logMessage)
         {
             // getting directory location

@@ -17,9 +17,18 @@ using MySql.Data.MySqlClient;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for ProcessOrder.xaml
-    /// </summary>
+    //===================================================================================================================
+    /// \class ProcessOrder
+    ///
+    /// \brief The purpose of this class is to hold functions which will deal with initializing the elements needed
+    /// in order to process the orders for the TMS system.
+    /// \details <b>Details</b>
+    ///
+    /// ProcessOrder class conatins 2 functions, these functions are used in order to connect to the corrosponding 
+    /// database and process the orders from the TMS. 
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public partial class ProcessOrder : Page
     {
         private MySqlConnection connection;
@@ -29,6 +38,23 @@ namespace SQ_TMS
         private string password;
         private string port;
 
+        //===============================================================================================================
+        /// \brief ProcessOrder function
+        /// \details <b>Details</b>
+        ///
+        /// Method which is used in order to connect to the database and process the order. It will do
+        /// so with a query. It holds values within the function in order to connect to database.
+        /// \param none- <b>void</b> - no parameter
+        ///
+        /// \see ~ProcessOrder()
+        //===============================================================================================================
+
+        // ------------------------------------------------------------
+        // Function: ProcessOrder
+        // Description: This method is called to initialize the components for this page and set up a connection to mysql database in order to proccess orders
+        // Parameters: 
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         public ProcessOrder()
         {
             try
@@ -39,24 +65,29 @@ namespace SQ_TMS
                 uid = "root";
                 password = "Dina@1989";
                 port = "3306";
+
                 string connectionString;
+
                 connectionString = "SERVER=" + server + ";" + "port=" + port + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-
-
                 connection = new MySqlConnection(connectionString);
-
 
                 string query = "select * from orders";
 
                 MySqlCommand cmd = new MySqlCommand(query);
+
                 cmd.CommandType = CommandType.Text;
+
                 cmd.Connection = connection;
+
                 connection.Open();
+
                 var data_reader = cmd.ExecuteReader();
+
                 if (data_reader.HasRows)
                 {
                     int count = data_reader.FieldCount;
+
                     while (data_reader.Read())
                     {
                         for (var i = 0; i < count; i++)
@@ -65,7 +96,6 @@ namespace SQ_TMS
                         }
                         gridCompletedOrders.Text += "\n";
                     }
-
 
                     connection.Close();
                 }
@@ -77,17 +107,43 @@ namespace SQ_TMS
 
         }
 
+        //===============================================================================================================
+        /// \brief btnGenerateInvoice_Click function
+        /// \details <b>Details</b>
+        ///
+        /// Method which is used in order to connect to the database and process the order. It will do
+        /// so with a query. It holds values within the function in order to connect to database. This
+        /// function will generate an invoice for the user on the button click.
+        /// \param sender - <b>object</b> - elements which represents sender
+        /// \param e - <b>RoutedEventsArgs</b> - elements which represents e
+        ///
+        /// \see ~ProcessOrder()
+        //===============================================================================================================
+
+        // ------------------------------------------------------------
+        // Function: btnGenerateInvoice_Click
+        // Description: This method is called to generate the invoice that is associated with orders
+        // Parameters: object sender, RoutedEventArgs e
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         private void btnGenerateInvoice_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 string query = "select * from orders";
+
                 string temp = "";
+
                 MySqlCommand cmd = new MySqlCommand(query);
+
                 cmd.CommandType = CommandType.Text;
+
                 cmd.Connection = connection;
+
                 connection.Open();
+
                 var data_reader = cmd.ExecuteReader();
+
                 if (data_reader.HasRows)
                 {
                     int count = data_reader.FieldCount;

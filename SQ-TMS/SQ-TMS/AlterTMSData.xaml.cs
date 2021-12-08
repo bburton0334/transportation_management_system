@@ -12,98 +12,74 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for AlterTMSData.xaml
-    /// </summary>
+    ///==================================================================================================================
+    /// \class AlterTMSData
+    ///
+    /// \brief The purpose of this class is to call the method that takes existing and firstName to validate and check if a 
+    ///  previous version of them exist.
+    /// \details <b>Details</b>
+    ///
+    /// It contains private attributes like, connection, server, database, uid, password and port, and a constructor AlterTMSData
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    ///==================================================================================================================
     public partial class AlterTMSData : Page
     {
+        private MySqlConnection connection;
+        private string server;
+        private string database;
+        private string uid;
+        private string password;
+        private string port;
+        //===============================================================================================================
+        /// \brief AlterTMSData
+        /// \details <b>Details</b>
+        ///
+        /// Constructor type function.
+        /// \param void, none
+        ///
+        //===============================================================================================================
         public AlterTMSData()
         {
+
             InitializeComponent();
+
+            server = "localhost";
+            database = "tmsdata";
+            uid = "root";
+            password = "Dina@1989";
+            port = "3306";
+
+
+
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "port=" + port + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+
+
+            connection = new MySqlConnection(connectionString);
+
         }
 
-        private void btnSubmitLTLRate_Click(object sender, RoutedEventArgs e)
-        {
-            bool isValid = String.IsNullOrWhiteSpace(txtLTLRate.Text);
 
-            if (!isValid)
-            {
-                try
-                {
-                    TMSData.LTLRate = Double.Parse(txtLTLRate.Text);
-
-                    // do something with new rate here.
-
-
-                    lblFeedback.Content = "[SUCCESS] Value changed.";
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log(ex.Message);
-                    lblFeedback.Content = "[FAILURE] MUST be numeric and double.";
-                }
-            }
-            else
-            {
-                lblFeedback.Content = "[FAILURE] You must eneter a value into the textbox.";
-            }
-        }
-
-        private void btnSubmitFTLRate_Click(object sender, RoutedEventArgs e)
-        {
-            bool isValid = String.IsNullOrWhiteSpace(txtFTLRate.Text);
-
-            if (!isValid)
-            {
-                try
-                {
-                    TMSData.FTLRate = Double.Parse(txtFTLRate.Text);
-
-                    // do something with new rate here
-
-                    lblFeedback.Content = "[SUCCESS] Value changed.";
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log(ex.Message);
-                    lblFeedback.Content = "[FAILURE] MUST be numeric and double.";
-                }
-            }
-            else
-            {
-                lblFeedback.Content = "[FAILURE] You must eneter a value into the textbox.";
-            }
-        }
-
-        private void btnSubmitReeferCharge_Click(object sender, RoutedEventArgs e)
-        {
-            bool isValid = String.IsNullOrWhiteSpace(txtReeferCharge.Text);
-
-            if (!isValid)
-            {
-                try
-                {
-                    TMSData.ReeferCharge = int.Parse(txtReeferCharge.Text);
-
-                    // do something with new rate here
-
-                    lblFeedback.Content = "[SUCCESS] Value changed.";
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log(ex.Message);
-                    lblFeedback.Content = "[FAILURE] MUST be numeric.";
-                }
-            }
-            else
-            {
-                lblFeedback.Content = "[FAILURE] You must eneter a value into the textbox.";
-            }
-        }
-
+        //===============================================================================================================
+        /// \brief btnInitiateCommand_Click
+        /// \details <b>Details</b>
+        ///
+        /// Method that takes existing and firstName to validate and check if a previous version of them exist.
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        //===============================================================================================================
+        
+ 
+       
+       
         private void btnInitiateCommand_Click(object sender, RoutedEventArgs e)
         {
             bool isValid = String.IsNullOrWhiteSpace(txtCarrier.Text);
@@ -113,19 +89,69 @@ namespace SQ_TMS
             {
                 string carrier = txtCarrier.Text;
                 string command = cmbboxCommand.Text;
-
+        
+                    
 
                 if (command == "Add")
                 {
+                    string query2 = "insert into carriersRateFees (cName, desCity, FTLA, LTLA, FTLRate, LTLRate, refCharge) values ('" + txtCarrier.Text + "',  '" + txtDesCity.Text + "',  '" + Convert.ToInt32(txtFTLARate.Text)+ "', '" + Convert.ToInt32(txtLTLARate.Text) + "',  '" + Convert.ToDecimal(txtFTLRate.Text) + "', '" + Convert.ToDecimal(txtLTLRate.Text) + "', '" + Convert.ToDecimal(txtReeferCharge.Text) + "');";
+                    connection.Open();
 
+                    //create mysql command
+                    MySqlCommand cmd = new MySqlCommand();
+                    //Assign the query using CommandText
+                    cmd.CommandText = query2;
+                    //Assign the connection using Connection
+                    cmd.Connection = connection;
+
+
+
+                    //Execute query
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
                 }
                 else if (command == "Update")
                 {
 
+                    string query = "UPDATE carriersRateFees SET refCharge = '" + txtReeferCharge.Text + "';";
+                    query += "UPDATE carriersRateFees SET LTLRate = '" + txtCarrier.Text + "';";
+                    query += "UPDATE carriersRateFees SET LTLRate = '" + txtDesCity.Text + "';";
+                    query += "UPDATE carriersRateFees SET LTLRate = '" + txtFTLARate.Text + "';";
+                    query += "UPDATE carriersRateFees SET LTLRate = '" + txtLTLARate.Text + "';";
+                    query += "UPDATE carriersRateFees SET LTLRate = '" + txtLTLRate.Text + "';";
+                    query += "UPDATE carriersRateFees SET LTLRate = '" + txtFTLRate.Text + "';";
+                    connection.Open();
+
+                    //create mysql command
+                    MySqlCommand cmd = new MySqlCommand();
+                    //Assign the query using CommandText
+                    cmd.CommandText = query;
+                    //Assign the connection using Connection
+                    cmd.Connection = connection;
+
+
+
+                    //Execute query
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
                 }
                 else if (command == "Delete")
                 {
+                    string query2 = "Delete from carriersRateFees where cName = '" + txtCarrier.Text + "' ";
+                    connection.Open();
 
+                    //create mysql command
+                    MySqlCommand cmd = new MySqlCommand();
+                    //Assign the query using CommandText
+                    cmd.CommandText = query2;
+                    //Assign the connection using Connection
+                    cmd.Connection = connection;
+
+
+
+                    //Execute query
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
                 }
 
                 lblFeedback.Content = "[SUCCESS] Value changed.";
@@ -134,6 +160,10 @@ namespace SQ_TMS
             {
                 lblFeedback.Content = "[FAILURE] You must data in both textbox and dropdown list.";
             }
+
+            
         }
+
+        
     }
 }

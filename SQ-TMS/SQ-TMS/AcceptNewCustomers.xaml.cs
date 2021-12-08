@@ -21,9 +21,16 @@ using System.Windows.Forms;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for AcceptNewCustomers.xaml
-    /// </summary>
+    //===================================================================================================================
+    /// \class AcceptNewCustomers
+    ///
+    /// \brief The purpose of this class is to intilizes the connetion attributes, inserting the result of the query that retrieve the data from the database, 
+    /// and calling the function that loads the customer's data into the customer's grid
+    /// \details <b>Details</b>
+    ///  It  contains private attributes like, connection, server, database, uid, password and port
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public partial class AcceptNewCustomers : Page
     {
         private MySqlConnection connection;
@@ -32,6 +39,17 @@ namespace SQ_TMS
         private string uid;
         private string password;
         private string port;
+        
+        ///==============================================================================================================
+        /// \brief To AcceptNewCustomers
+        /// \details <b>Details</b>
+        ///
+        /// Intilizes the connetion attributes.
+        ///
+        /// \param void, none
+        /// \return void, none
+        ///==============================================================================================================
+
         public AcceptNewCustomers()
         {
             InitializeComponent();
@@ -51,6 +69,15 @@ namespace SQ_TMS
             connection = new MySqlConnection(connectionString);
 
         }
+        ///==============================================================================================================
+        /// \brief To LoadNewCustomerData
+        /// \details <b>Details</b>
+        ///
+        ///  Inserts the result of the query that retrieve the data from the database.
+        /// \param void, none
+        /// 
+        /// \return void, none
+        ///==============================================================================================================
 
         private DataTable LoadNewCustomerData()
         {
@@ -72,14 +99,25 @@ namespace SQ_TMS
             return custInfo;
         }
 
+        ///============================================================================================================== 
+        /// \brief To btnAcceptCustomer_Click
+        /// \details <b>Details</b>
+        ///
+        ///  It takes the inputted customer's data into the database.
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param newAdminFirstName - <b>RotedEventArgs</b> - Event e -> made by xaml
+        /// 
+        /// \return void, none
+        ///==============================================================================================================
+    
         private void btnAcceptCustomer_Click(object sender, RoutedEventArgs e)
         {
             lblFeedback.Content = "";
 
             if (gridNewCustomers.SelectedCells.Count > 0)
             {
-                try
-                {
+                //try
+                //{
                     string clientName = null;
                     int jobType = 0;
                     int quantity = 0;
@@ -118,7 +156,7 @@ namespace SQ_TMS
                     }
 
 
-                    string query = "INSERT INTO tblmarketplacecontract (ContractID, ClientName, JobType, Quantity, Origin, Destination, VanType) values('" + newID + "','" + clientName + "','" + jobType + "','" + quantity + "','" + origin + "','" + destination + "','" + vanType + "'); ";
+                    string query = "INSERT INTO tblmarketplacecontract (ClientName, JobType, Quantity, Origin, Destination, VanType) values('" + clientName + "','" + jobType + "','" + quantity + "','" + origin + "','" + destination + "','" + vanType + "'); ";
 
                     MySqlCommand cmd = new MySqlCommand(query);
                     cmd.CommandType = CommandType.Text;
@@ -131,12 +169,12 @@ namespace SQ_TMS
 
 
                     lblFeedback.Content = "[SUCCESS] Client contract has been accepted.";
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log(ex.Message);
-                    lblFeedback.Content = "[FAILURE] A Critical error has occured. Check Log.";
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    Logger.Log(ex.Message);
+                //    lblFeedback.Content = "[FAILURE] A Critical error has occured. Check Log.";
+                //}
             }
             else
             {
@@ -144,6 +182,17 @@ namespace SQ_TMS
             }
         }
 
+        ///============================================================================================================== 
+        /// \brief To gridNewCustomers_Loaded
+        /// \details <b>Details</b>
+        ///
+        ///  it calls the function that loads the customer's data into the customer's grid.
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param newAdminFirstName - <b>RotedEventArgs</b> - Event e -> made by xaml
+        /// 
+        /// \return void, none
+        ///==============================================================================================================
+    
         private void gridNewCustomers_Loaded(object sender, RoutedEventArgs e)
         {
             gridNewCustomers.DataContext = LoadNewCustomerData();

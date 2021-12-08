@@ -16,11 +16,26 @@
 /// - the carriers
 /// - the trips
 ///
+/// <b>This part of the project was in relation to milestone - 3 </b><br>
+///
 /// <h2><b> Application Unit Tests Success </h2></b>
 ///	This lists the unit tests for the various classes. It contains information about the <br>
 ///	tests. The unit tests, as shown, have helped successfully create the corresponding <br>
 ///	methods within the classes for the TMS: Transporation Managment System thus far.  <br>
 /// \image html unittest.jpg
+///
+/// <b>This part of the project was in relation to milestone - 2 </b><br>
+///
+/// <h2><b>Diagrams</h2></b>
+///
+/// \image html img1.png
+/// \image html img2.png
+/// \image html img3.png
+/// \image html img4.png
+///
+///
+/// <h2><b></b></h2>
+///
 ///
 ///
 /// <hr>

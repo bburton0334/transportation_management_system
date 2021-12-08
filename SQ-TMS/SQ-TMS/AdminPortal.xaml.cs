@@ -15,9 +15,16 @@ using System.Windows.Shapes;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for AdminPortal.xaml
-    /// </summary>
+    ///==================================================================================================================
+    /// \class AdminPortal
+    ///
+    /// \brief The purpose of this class is to, call the function that loads the customer's data into the customer's grid, to displays the log file's content,
+    ///  it allows the admin to initiate a backup job. 
+    /// \details <b>Details</b>
+    ///  It contains bool type vars like,isConfigVisible, isReviewVisible, isBackupVisible and isAlterDataVisibled
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    ///==================================================================================================================
     public partial class AdminPortal : Page
     {
         bool isConfigVisible = false;
@@ -30,6 +37,17 @@ namespace SQ_TMS
             InitializeComponent();
         }
 
+        ///============================================================================================================== 
+        /// \brief To btnConfiguration_Click
+        /// \details <b>Details</b>
+        ///
+        ///  it calls the function that loads the customer's data into the customer's grid.
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param newAdminFirstName - <b>RotedEventArgs</b> - Event e -> made by xaml
+        /// 
+        /// \return void, none
+        ///==============================================================================================================
+    
         private void btnConfiguration_Click(object sender, RoutedEventArgs e)
         {
             frameAdminPortal.Visibility = Visibility.Hidden;
@@ -47,6 +65,17 @@ namespace SQ_TMS
             }
         }
 
+        ///============================================================================================================== 
+        /// \brief To btnReviewLog_Click
+        /// \details <b>Details</b>
+        ///
+        ///  it displays the log file's content.
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param newAdminFirstName - <b>RotedEventArgs</b> - Event e -> made by xaml
+        /// 
+        /// \return void, none
+        ///==============================================================================================================
+    
         private void btnReviewLog_Click(object sender, RoutedEventArgs e)
         {
             frameAdminPortal.Visibility = Visibility.Hidden;
@@ -63,7 +92,17 @@ namespace SQ_TMS
                 isReviewVisible = false;
             }
         }
-
+        ///============================================================================================================== 
+        /// \brief To btnAlterData_Click
+        /// \details <b>Details</b>
+        ///
+        ///  it allows to edit the database
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param newAdminFirstName - <b>RotedEventArgs</b> - Event e -> made by xaml
+        /// 
+        /// \return void, none
+        ///==============================================================================================================
+    
         private void btnAlterData_Click(object sender, RoutedEventArgs e)
         {
             frameAdminPortal.Visibility = Visibility.Hidden;
@@ -80,6 +119,17 @@ namespace SQ_TMS
                 isAlterDataVisible = false;
             }
         }
+        
+        ///============================================================================================================== 
+        /// \brief To btnBackup_Click
+        /// \details <b>Details</b>
+        ///
+        ///  it allows the admin to initiate a backup job. 
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param newAdminFirstName - <b>RotedEventArgs</b> - Event e -> made by xaml
+        /// 
+        /// \return void, none
+        ///==============================================================================================================
 
         private void btnBackup_Click(object sender, RoutedEventArgs e)
         {

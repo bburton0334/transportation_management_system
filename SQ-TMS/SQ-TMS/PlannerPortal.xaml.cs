@@ -17,9 +17,18 @@ using MessageBox = System.Windows.MessageBox;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for PlannerPortal.xaml
-    /// </summary>
+    //===================================================================================================================
+    /// \class PlannerPortal
+    ///
+    /// \brief The purpose of this class is to hold functions which will initiate the load in animation for TMS
+    /// \details <b>Details</b>
+    ///
+    /// PlannerPortal class conatins 5 functions. The majority of these functions are used in order to hide and show certain pages
+    /// depending on if the user has clicked the button corrospondng with that page. One other function is used in order to ask
+    /// the user if they would like to increment the day by one.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public partial class PlannerPortal : Page
     {
         bool isManageOrdersVisible = false;
@@ -28,11 +37,33 @@ namespace SQ_TMS
         bool isGRVisible = false;
         //bool isGenerateReportVisible = false;
 
+        // ------------------------------------------------------------
+        // Function: PlannerPortal
+        // Description: This method is called to initialize the components for this page
+        // Parameters: 
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         public PlannerPortal()
         {
             InitializeComponent();
         }
 
+        //===============================================================================================================
+        /// \brief btnManageOrders_Click function
+        /// \details <b>Details</b>
+        ///
+        /// Method which is used in order to either show or hide the window for ManageOrders.
+        /// \param sender - <b>object</b> - elements which represents sender
+        /// \param e - <b>RoutedEventsArgs</b> - elements which represents e
+        ///
+        /// \see ~PlannerPortal()
+        //===============================================================================================================
+        // ------------------------------------------------------------
+        // Function: btnManageOrders_Click
+        // Description: This method is called to either show or hide the window for ManageOrders
+        // Parameters: object sender, RoutedEventArgs e
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         private void btnManageOrders_Click(object sender, RoutedEventArgs e)
         {
             framePlannerPortal.Visibility = Visibility.Hidden;
@@ -50,6 +81,23 @@ namespace SQ_TMS
             }
         }
 
+        //===============================================================================================================
+        /// \brief btnManageOrders_Click function
+        /// \details <b>Details</b>
+        ///
+        /// Method which is used in order to prompt the user if they would like to increment the days by 1 day
+        /// \param sender - <b>object</b> - elements which represents sender
+        /// \param e - <b>RoutedEventsArgs</b> - elements which represents e
+        ///
+        /// \see ~PlannerPortal()
+        //===============================================================================================================
+
+        // ------------------------------------------------------------
+        // Function: btnPassTime_Click
+        // Description: This method is called to prompt the user if they would like to increment the days by 1
+        // Parameters: object sender, RoutedEventArgs e
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         private void btnPassTime_Click(object sender, RoutedEventArgs e)
         {
             int daysPassed = TMSData.TotalDaysPassed;
@@ -64,6 +112,23 @@ namespace SQ_TMS
             }
         }
 
+        //===============================================================================================================
+        /// \brief btnConfirmOrders_Click function
+        /// \details <b>Details</b>
+        ///
+        /// Method which is used in order to either show or hide the window for ConfirmOrders.
+        /// \param sender - <b>object</b> - elements which represents sender
+        /// \param e - <b>RoutedEventsArgs</b> - elements which represents e
+        ///
+        /// \see ~PlannerPortal()
+        //===============================================================================================================
+
+        // ------------------------------------------------------------
+        // Function: btnConfirmOrders_Click
+        // Description: This method is called to either show or hide the window for ConfirmOrders
+        // Parameters: object sender, RoutedEventArgs e
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         private void btnConfirmOrders_Click(object sender, RoutedEventArgs e)
         {
             framePlannerPortal.Visibility = Visibility.Hidden;
@@ -81,6 +146,23 @@ namespace SQ_TMS
             }
         }
 
+        //===============================================================================================================
+        /// \brief btnActiveOrders_Click function
+        /// \details <b>Details</b>
+        ///
+        /// Method which is used in order to either show or hide the window for ActiveOrders.
+        /// \param sender - <b>object</b> - elements which represents sender
+        /// \param e - <b>RoutedEventsArgs</b> - elements which represents e
+        ///
+        /// \see ~PlannerPortal()
+        //===============================================================================================================
+
+        // ------------------------------------------------------------
+        // Function: btnActiveOrders_Click
+        // Description: This method is called to either show or hide the window for ActiveOrders
+        // Parameters: object sender, RoutedEventArgs e
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         private void btnActiveOrders_Click(object sender, RoutedEventArgs e)
         {
             framePlannerPortal.Visibility = Visibility.Hidden;
@@ -98,6 +180,23 @@ namespace SQ_TMS
             }
         }
 
+        //===============================================================================================================
+        /// \brief btnGenerateReport_Click function
+        /// \details <b>Details</b>
+        ///
+        /// Method which is used in order to either show or hide the window for GenerateReport.
+        /// \param sender - <b>object</b> - elements which represents sender
+        /// \param e - <b>RoutedEventsArgs</b> - elements which represents e
+        ///
+        /// \see ~PlannerPortal()
+        //===============================================================================================================
+
+        // ------------------------------------------------------------
+        // Function: btnGenerateReport_Click
+        // Description: This method is called to either show or hide the window for GenerateReport
+        // Parameters: object sender, RoutedEventArgs e
+        // Returns: NOTHING
+        // ------------------------------------------------------------
         private void btnGenerateReport_Click(object sender, RoutedEventArgs e)
         {
             framePlannerPortal.Visibility = Visibility.Hidden;

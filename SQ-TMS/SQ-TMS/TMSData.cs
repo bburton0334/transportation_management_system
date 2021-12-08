@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace SQ_TMS
 {
+    //===================================================================================================================
+    /// \class TMSData
+    ///
+    /// \brief The purpose of this class is to hold static variables that hold information that is important with
+    /// in the TMS: Transportation Management System. These elements are accesedd from mutiple functions.
+    /// \details <b>Details</b>
+    ///
+    /// TMSData Class contains the following variables, TotalDaysPassed, LogFilePath, LogFileName, InvoiceFileName,
+    /// ReportFileDir, ReportFileName, BackupFileName, BackupFileDir, FTLRate, LTLRate, and ReeferCharge.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public class TMSData
     {
         // holds list of Shipment objects

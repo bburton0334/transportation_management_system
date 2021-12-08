@@ -9,33 +9,49 @@ using System.Windows;
 
 namespace SQ_TMS
 {
+    //===================================================================================================================
+    /// \class Logger
+    ///
+    /// \brief The purpose of this class is to hold functions which allow the user to log to a text file.
+    /// \details <b>Details</b>
+    ///
+    /// Logger class conatins 2 functions, one which takes the string as a parameter, and onother whic writes the log
+    /// to a text file in a corrosponding directory.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public static class Logger
     {
-        //============================================================================
-        // FUNCTION         : Log
-        // DESCRIPTION      :
-        //      Function which passes the message parameter to the LogWrite function
-        //      so the message can be written to the log file.
-        // PARAMETERS       : message (holds the message to be logged)
-        // RETURNS          : none
-        //============================================================================
+
+        //===============================================================================================================
+        /// \brief GLog
+        /// \details <b>Details</b>
+        ///
+        /// Function which passes the message parameter to the LogWrite function
+        /// so the message can be written to the log file.
+        /// \param message - <b>string</b> - contains the message that will be sent to the report file.
+        ///
+        /// \see ~Logger()
+        //===============================================================================================================
         public static void Log(string message)
         {
             LogWriter(message);
         }
 
-        //============================================================================
-        // FUNCTION         : LogWriter
-        // DESCRIPTION      :
-        //      Function which is called so the passed logMessage can be written to 
-        //      the log file. The function will get the current directory of the
-        //      service and write to the log file there. If a log.txt file does
-        //      not already exist, and new file will be created. The message
-        //      then be written to the log file in a format which states the time
-        //      and the message.
-        // PARAMETERS       : logMessage (holds the message to be logged)
-        // RETURNS          : none
-        //============================================================================
+        //===============================================================================================================
+        /// \brief LogWriter function
+        /// \details <b>Details</b>
+        ///
+        /// Function which is called so the passed logMessage can be written to 
+        ///      the log file. The function will get the current directory of the
+        ///      service and write to the log file there. If a log.txt file does
+        ///      not already exist, and new file will be created. The message
+        ///      then be written to the log file in a format which states the time
+        ///      and the message.
+        /// \param logMessage - <b>string</b> - contains the message that will be sent to the report file.
+        ///
+        /// \see ~Logger()
+        //===============================================================================================================
         public static void LogWriter(string logMessage)
         {
             // getting directory location

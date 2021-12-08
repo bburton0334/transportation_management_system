@@ -79,7 +79,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Cursor="Hand" x:Name="btnAdminPortal" Click="btnAdminPortal_Click" Content="ADMIN PORTAL" HorizontalAlignment="Left" Margin="290.2,49.8,0,0" VerticalAlignment="Top" Width="255" Height="30" FontSize="16" Foreground="Black" Background="#FFD7D7D7" Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontStyle="Italic">
+            <Button x:Name="btnAdminPortal" Click="btnAdminPortal_Click" Content="ADMIN PORTAL" HorizontalAlignment="Left" Margin="290.2,49.8,0,0" VerticalAlignment="Top" Width="255" Height="30" FontSize="16" Foreground="Black" Background="#FFD7D7D7" Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontStyle="Italic">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>

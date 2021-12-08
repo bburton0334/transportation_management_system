@@ -7,33 +7,46 @@ using System.Threading.Tasks;
 
 namespace SQ_TMS
 {
+    //===================================================================================================================
+    /// \class Invoice
+    ///
+    /// \brief The purpose of this class is to hold functions which allow the user to log to an invoice text file.
+    /// \details <b>Details</b>
+    ///
+    /// Invoice class conatins 2 functions, one which takes the string as a parameter, and onother whic writes the invoice
+    /// to a text file in a corrosponding directory.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     class Invoice
     {
-        //============================================================================
-        // FUNCTION         : Generate
-        // DESCRIPTION      :
-        //      Function which passes the message parameter to the LogWrite function
-        //      so the message can be written to the log file.
-        // PARAMETERS       : message (holds the message to be logged)
-        // RETURNS          : none
-        //============================================================================
+        //===============================================================================================================
+        /// \brief Generate
+        /// \details <b>Details</b>
+        ///
+        /// Function which passes the message parameter to the LogWrite function so the message can be written to the log file.
+        /// \param message - <b>string</b> - holds the message to be logged
+        ///
+        /// \return void, none
+        //===============================================================================================================
+
         public static void Generate(string message)
         {
             InvoiceWriter(message);
         }
 
-        //============================================================================
-        // FUNCTION         : InvoiceWriter
-        // DESCRIPTION      :
-        //      Function which is called so the passed logMessage can be written to 
-        //      the log file. The function will get the current directory of the
-        //      service and write to the log file there. If a log.txt file does
-        //      not already exist, and new file will be created. The message
-        //      then be written to the log file in a format which states the time
-        //      and the message.
-        // PARAMETERS       : logMessage (holds the message to be logged)
-        // RETURNS          : none
-        //============================================================================
+        //===============================================================================================================
+        /// \brief InvoiceWriter
+        /// \details <b>Details</b>
+        ///
+        /// Function which is called so the passed logMessage can be written to the log file. The function will get the current directory of the
+        /// service and write to the log file there. If a log.txt file does not already exist, and new file will be created. The message
+        /// then be written to the log file in a format which states the timeand the message.
+        /// \param InvoiceMessage - <b>string</b> - holds the message to be logged
+        ///
+        /// \return void, none
+        //===============================================================================================================
+
         public static void InvoiceWriter(string InvoiceMessage)
         {
             // getting directory location

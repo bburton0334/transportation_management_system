@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace SQ_TMS
 {
-    // USED FOR CONTRACT MARKET PLACE TO STORE ACCEPTED CUSTOMER CONTRACTS
+    //===================================================================================================================
+    /// \class Contracts
+    ///
+    /// \brief The purpose of this class is to hold functions which allow the user to log to a text file.
+    /// \details <b>Details</b>
+    ///
+    /// Logger class conatins 2 functions, one which takes the string as a parameter, and onother whic writes the log
+    /// to a text file in a corrosponding directory.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public class Contract
     {
         public int ContractID { get; set; }

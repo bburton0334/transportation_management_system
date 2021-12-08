@@ -11,34 +11,42 @@
     <Grid>
         <Border BorderBrush="#FF000000" BorderThickness="1" CornerRadius="8">
             <Grid Background="#FF1B1B1B">
-                <Rectangle Fill="#FF292929" HorizontalAlignment="Left" Height="448" VerticalAlignment="Top" Width="159"/>
-                <Label Content="Admin" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFE2E2E2" FontWeight="Bold" FontFamily="Agency FB" FontSize="18"/>
-                <Rectangle Fill="#FF151515" HorizontalAlignment="Left" Height="2" Margin="14,38,0,0" VerticalAlignment="Top" Width="130"/>
-                <Button Click="btnConfiguration_Click" x:Name="btnConfiguration"  HorizontalContentAlignment="Center" Content="CONFIGURATION" HorizontalAlignment="Left" Margin="14,54,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="445*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="37*"/>
+                    <ColumnDefinition Width="229*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Fill="#FF292929" HorizontalAlignment="Left" Height="448" VerticalAlignment="Top" Width="159" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <Label Content="Admin" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFE2E2E2" FontWeight="Bold" FontFamily="Agency FB" FontSize="18" Grid.ColumnSpan="2"/>
+                <Rectangle Fill="#FF151515" HorizontalAlignment="Left" Height="2" Margin="14,38,0,0" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2"/>
+                <Button Click="btnConfiguration_Click" x:Name="btnConfiguration"  HorizontalContentAlignment="Center" Content="CONFIGURATION" HorizontalAlignment="Left" Margin="14,54,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" FontSize="9" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB" Grid.ColumnSpan="2">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Click="btnReviewLog_Click" x:Name="btnReviewLog" HorizontalContentAlignment="Center" Content="REVIEW LOG FILES" HorizontalAlignment="Left" Margin="14,92,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB" FontSize="9">
+                <Button Click="btnReviewLog_Click" x:Name="btnReviewLog" HorizontalContentAlignment="Center" Content="REVIEW LOG FILES" HorizontalAlignment="Left" Margin="14,92,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB" FontSize="9" Grid.ColumnSpan="2">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Image HorizontalAlignment="Left" Height="448" Margin="164,0,0,0" VerticalAlignment="Top" Width="634" Source="background.jpg" Stretch="Fill" Opacity="0.6"/>
-                <Image HorizontalAlignment="Left" Height="125" Margin="319,169,0,0" VerticalAlignment="Top" Width="320" Source="center-logo.png" Opacity="0.2"/>
-                <Frame x:Name="frameAdminPortal" NavigationUIVisibility="Hidden" Margin="164,0,0.4,0"></Frame>
-                <Button Click="btnAlterData_Click" x:Name="btnAlterData" HorizontalContentAlignment="Center" Content="ALTER TMS DATA" HorizontalAlignment="Left" Margin="14,130,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB" FontSize="9">
+                <Image HorizontalAlignment="Left" Height="448" Margin="53,0,0,0" VerticalAlignment="Top" Width="634" Source="background.jpg" Stretch="Fill" Opacity="0.6" Grid.Column="1" Grid.RowSpan="2"/>
+                <Image HorizontalAlignment="Left" Height="125" Margin="208,169,0,0" VerticalAlignment="Top" Width="320" Source="center-logo.png" Opacity="0.2" Grid.Column="1"/>
+                <Frame x:Name="frameAdminPortal" NavigationUIVisibility="Hidden" Margin="53,0,0,0" Grid.Column="1" Grid.RowSpan="2"></Frame>
+                <Button Click="btnAlterData_Click" x:Name="btnAlterData" HorizontalContentAlignment="Center" Content="ALTER TMS DATA" HorizontalAlignment="Left" Margin="14,130,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB" FontSize="9" Grid.ColumnSpan="2">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Click="btnBackup_Click" x:Name="btnBackup" HorizontalContentAlignment="Center" Content="INITIATE BACKUP" HorizontalAlignment="Left" Margin="14,168,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB" FontSize="9">
+                <Button Click="btnBackup_Click" x:Name="btnBackup" HorizontalContentAlignment="Center" Content="INITIATE BACKUP" HorizontalAlignment="Left" Margin="14,168,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" FontStyle="Italic" Height="23" Background="#FF1D1D1D" Foreground="#FFEBEBEB" FontSize="9" Grid.ColumnSpan="2">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>

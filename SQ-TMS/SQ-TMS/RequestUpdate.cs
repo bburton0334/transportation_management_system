@@ -15,7 +15,6 @@ namespace SQ_TMS
 
         }
 
-      
         public static bool ValidateAdminExists(Admin existingAdmin)
         {
             bool adminExists = false;

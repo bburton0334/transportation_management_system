@@ -16,9 +16,16 @@ using System.Windows.Shapes;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for InitiateBackup.xaml
-    /// </summary>
+    //===================================================================================================================
+    /// \class InitiateBackup
+    ///
+    /// \brief The purpose of this class is to initiate the backup file for the TMS.
+    /// \details <b>Details</b>
+    ///
+    /// InitiateBackup is used to show the user various buttons which will allow the user to pick weither or not they want
+    /// to backup data from all time, or from two weeks ago.
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public partial class InitiateBackup : Page
     {
         public InitiateBackup()
@@ -26,6 +33,17 @@ namespace SQ_TMS
             InitializeComponent();
         }
 
+        //===============================================================================================================
+        /// \brief btnGenerateBackup_Click
+        /// \details <b>Details</b>
+        ///
+        ///  This method is called to generate a backup file and store it in C:\TMSTemp\Backup\BackupData.txt
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        //===============================================================================================================
+ 
         private void btnGenerateBackup_Click(object sender, RoutedEventArgs e)
         {
             // used exactly like logger. Stores in C:\TMSTemp\Backup\BackupData.txt
@@ -33,6 +51,17 @@ namespace SQ_TMS
 
             lblGenerateBackupFeedback.Content = "[SUCCESS] Backup has been generated.";
         }
+
+        //===============================================================================================================
+        /// \brief btnSubmitBackupDir_Click
+        /// \details <b>Details</b>
+        ///
+        /// This method is called to change the direcorty for the back up file 
+        /// \param sender - <b>object</b> - object sender -> made by xaml
+        /// \param RoutedEventArgs - <b>RotedEventArgs</b> - Event e -> made by xaml
+        ///
+        /// \return void, none
+        //===============================================================================================================
 
         private void btnSubmitBackupDir_Click(object sender, RoutedEventArgs e)
         {

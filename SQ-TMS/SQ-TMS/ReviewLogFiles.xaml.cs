@@ -16,11 +16,29 @@ using System.IO;
 
 namespace SQ_TMS
 {
-    /// <summary>
-    /// Interaction logic for ReviewLogFiles.xaml
-    /// </summary>
+    //===================================================================================================================
+    /// \class ReviewLogFiles
+    ///
+    /// \brief The purpose of this class is to hold functions which will initiate the load in animation for TMS
+    /// \details <b>Details</b>
+    ///
+    /// ReviewLogFiles class conatins 1 functions, a constructor which initizalizes the components.
+    /// This class only deals with one page for TMS. Its purpose is to load the log file within a text box to read.
+    ///
+    /// \author BNSM <i>Transportation Management System Experts</i>
+    //===================================================================================================================
     public partial class ReviewLogFiles : Page
     {
+
+        ///==============================================================================================================
+        /// \brief To Initialize the the elements within the ReviewLogFiles page
+        /// \details <b>Details</b>
+        ///
+        /// This function initializes all of the elements present within the page. It will load
+        /// a text file containing the log information for the TMS system. The user can scroll.
+        ///
+        /// \return void, none
+        ///==============================================================================================================
         public ReviewLogFiles()
         {
             InitializeComponent();

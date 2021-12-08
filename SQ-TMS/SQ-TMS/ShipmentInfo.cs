@@ -44,21 +44,21 @@ namespace SQ_TMS
         public string Tripstatus { get; set; } // can also be in bool, if trip completed,true, otherwise false
 
 
-        //////===============================================================================================================
-        /////// \brief To instantiate a new shipments object - given a set of attribute values
-        /////// \details <b>Details</b>
-        ///////
-        /////// Constructor that creates a new AdminUpdate object given the proper parameters.
-        /////// \param newShipmentsID - <b>int</b> - representation of the shipments ID
-        ///////
-        /////// \return As this is a <i>constructor</i> for the Buyer class, nothing is returned
-        ///////
-        /////// \see ~Buyer()
-        //////===============================================================================================================
-        ////public Shipment (int newShipmentsInfoID)
-        ////{
-        ////    ShipmentID = newShipmentsInfoID;
-        ////}
+        ////===============================================================================================================
+        ///// \brief To instantiate a new shipments object - given a set of attribute values
+        ///// \details <b>Details</b>
+        /////
+        ///// Constructor that creates a new AdminUpdate object given the proper parameters.
+        ///// \param newShipmentsID - <b>int</b> - representation of the shipments ID
+        /////
+        ///// \return As this is a <i>constructor</i> for the Buyer class, nothing is returned
+        /////
+        ///// \see ~Buyer()
+        ////===============================================================================================================
+        //public Shipment (int newShipmentsInfoID)
+        //{
+        //    ShipmentID = newShipmentsInfoID;
+        //}
 
         //public class Customer
         //{

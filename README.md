@@ -8,6 +8,8 @@ through the UI of WPF and then calculate information regarding cost,
 distance of the travel, among other important things. 
 
 <p align="center">
+	Landing Page for the TMS application. Allows user to select and
+	enter either the Buyer Portal, Admin Portal, or Admin Portal.
   <img src="./img/one.JPG" alt="TMS Landing Page" width="650">
 </p>
 
